@@ -22,7 +22,7 @@
         background-color: #000;
     }
 
-    body, div.table:after, #s1:before, #s3:before, #s4:after, #s5:before, section:nth-of-type(2n) h2, footer h2, .igc {
+    body, div.table:after, #s4:after, section:nth-of-type(2n-1):before, section:nth-of-type(2n) h2, footer h2, .igc {
         background-color: #111;
     }
 
@@ -30,8 +30,8 @@
         background-color: #222;
     }
 
-    #s_bar, #sb2:after, #mb1:after, #mb2:after, #mb3:after, #s2:before, #s4:before {
-        background-color: #aaa;
+    #s_bar, #sb2:after, #mb1:after, #mb2:after, #mb3:after, section:nth-of-type(2n):before {
+        background-color: #ccc;
     }
 
     #scroll_tipp:before, #mb1.mact:after, #mb2.mact:after, #mb3.mact:after, .cont_p a.a_color, .cont_block a {
@@ -44,14 +44,14 @@
     /*----------------------------------------------TXTCOL------------------------------------------------------*/
 
     #navi, #navi > a {
-        color: #aaa;
+        color: #ccc;
     }
 
-        #navi > a:hover, section, footer, #s1, #s3, #s5, .cont_p a.a_color:hover, .cont_block a:hover, .igc.igl a:hover, .igc.igi:hover div.igd {
+        #navi > a:hover, section, footer, section:nth-of-type(2n-1), .cont_p a.a_color:hover, .cont_block a:hover, .igc.igl a:hover, .igc.igi:hover div.igd {
             color: #eee;
         }
 
-    #s_bar, #s2, #s4, .cont_p a.a_color, .cont_block a {
+    #s_bar, section:nth-of-type(2n), .cont_p a.a_color, .cont_block a {
         color: #111;
     }
 
@@ -76,7 +76,7 @@
         }
 
     #sb1:after {
-        border-color: #aaa;
+        border-color: #ccc;
     }
 
     #s_button:hover #sb1:after {
