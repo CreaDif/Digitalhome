@@ -1,0 +1,93 @@
+﻿
+@media print {
+    body {
+        font-family: Raleway, sans-serif;
+        font-weight: 300;
+    }
+
+    #navi, #menu, #m_button {
+        display: none;
+    }
+
+    section, footer {
+        display: block;
+    }
+
+        section:before, footer:before {
+            -webkit-transform: skew(0deg, 0deg);
+            -moz-transform: skew(0deg, 0deg);
+            -o-transform: skew(0deg, 0deg);
+            -ms-transform: skew(0deg, 0deg);
+            transform: skew(0deg, 0deg);
+        }
+
+    .cont_block, .cont_p {
+        display: block;
+        width: 100%;
+        font-size: 0rem;
+    }
+
+    h1, h2, h3, h4, h5, p, .cont_p {
+        position: relative;
+        z-index: 2;
+    }
+
+    h1 {
+        padding: 0rem;
+        display: block;
+        box-decoration-break: clone;
+        font-size: 3rem;
+        line-height: 3.5rem;
+        font-weight: 100;
+    }
+
+    h2 {
+        padding: 0rem;
+        font-size: 1.7rem;
+        line-height: 2rem;
+        font-weight: 100;
+        margin-bottom: 1rem;
+    }
+
+    p {
+        display: block;
+        padding: 10px 5px;
+        font-size: 0.8rem;
+        line-height: 1.2rem;
+    }
+
+    .cont_p a, .cont_block a {
+        display: block;
+        text-decoration: none;
+        text-align: center;
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+        padding: 20px;
+    }
+
+        .cont_p a:after, .cont_block a:after {
+            display: inline-block;
+            position: relative;
+            top: -1px;
+            margin-left: 5px;
+            width: 10px;
+            height: 10px;
+            content: '';
+            -moz-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+            border: 2px solid;
+            border-bottom: none;
+            border-left: none;
+        }
+
+    .cont_p img {
+        display: inline-block;
+        vertical-align: top;
+        width: calc(50% - 4px);
+        border: 2px solid;
+        margin: 2px;
+    }
+}

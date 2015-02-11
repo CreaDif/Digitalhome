@@ -1,0 +1,121 @@
+﻿   
+
+
+
+
+
+
+
+
+
+
+
+
+     /*----------------------------------------------COLORS------------------------------------------------------*/
+        /*----------------------------------------------BG COL------------------------------------------------------*/
+@media screen {
+    #s_input {
+        background-color: rgba(0,0,0,0);
+    }
+
+    #navi, #m_button, #s_button {
+        background-color: #000;
+    }
+
+    body, div.table:after, #s1:before, #s3:before, #s4:after, #s5:before, section:nth-of-type(2n) h2, footer h2, .igc {
+        background-color: #111;
+    }
+
+    #navi > a:hover, #s_underline {
+        background-color: #222;
+    }
+
+    #s_bar, #sb2:after, #mb1:after, #mb2:after, #mb3:after, #s2:before, #s4:before {
+        background-color: #aaa;
+    }
+
+    #scroll_tipp:before, #mb1.mact:after, #mb2.mact:after, #mb3.mact:after, .cont_p a.a_color, .cont_block a {
+        background-color: #0042a3;
+    }
+
+        #sb3, #sb4, #s_button:hover #sb2:after, #m_button:hover #mb1.mact:after, #m_button:hover #mb2.mact:after, #m_button:hover #mb3.mact:after, .cont_p a.a_color:hover, .cont_block a:hover, .igc.igl a:hover {
+            background-color: #f79c00;
+        }
+    /*----------------------------------------------TXTCOL------------------------------------------------------*/
+
+    #navi, #navi > a {
+        color: #aaa;
+    }
+
+        #navi > a:hover, section, footer, #s1, #s3, #s5, .cont_p a.a_color:hover, .cont_block a:hover, .igc.igl a:hover, .igc.igi:hover div.igd {
+            color: #eee;
+        }
+
+    #s_bar, #s2, #s4, .cont_p a.a_color, .cont_block a {
+        color: #111;
+    }
+
+    h1 {
+        color: #0042a3;
+    } 
+
+    h2, .igc.igi div.igd {
+        color: #f79c00;
+    }
+    /*----------------------------------------------Border - COL------------------------------------------------------*/
+    #navi > a:before {
+        border-color: #000;
+    }
+
+    .igc {
+        border-color: #111;
+    }
+
+        #navi > a:hover:before, .cont_p a.a_color:hover:before, .cont_block a:hover:before, .igc.igl a:hover:before, .igc.igi:hover div.igd:before {
+            border-color: #eee;
+        }
+
+    #sb1:after {
+        border-color: #aaa;
+    }
+
+    #s_button:hover #sb1:after {
+        border-color: #f79c00;
+    }
+
+    #scroll_tipp:after {
+        border-color: #0042a3;
+    }
+    /*----------------------------------------------Adjustments------------------------------------------------------*/
+    .cont_block a {
+        color: #eee;
+    }
+        .cont_block a:hover {
+            color: #111;
+        }
+            .cont_block a:hover:before {
+                border-color: #111;
+            }
+}
+          /*----------------------------------------------END COL------------------------------------------------------*/
+
+
+@media print {
+    h1 {
+        color: #f79c00;
+    }
+
+    h2 {
+        color: #000;
+    }
+    p, .cont_p a, .cont_block a {
+        color: #000;
+    }
+
+        .cont_p a:after, .cont_block a:after {
+            border-color: #000;
+        }
+    .cont_p img {
+        border-color: #111;
+    }
+}

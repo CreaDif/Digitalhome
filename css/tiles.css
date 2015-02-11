@@ -1,0 +1,91 @@
+﻿.igc.igl a:before, .igc.igi div.igd:before {
+    display: inline-block;
+    position: relative;
+    top: -0.2rem;
+    margin-right: 10px;
+    width: 1rem;
+    height: 1rem;
+}
+
+.igc.igl a:after, .igc.igi div.igd:after {
+    content: '';
+    display: inline-block;
+    width: 1.5rem;
+    margin-left: 0px;
+}
+
+.igc.igl a:hover:before, .igc.igi:hover div.igd:before {
+    margin-right: 20px;
+}
+
+.igc {
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    vertical-align: top;
+}
+
+    .igc.igi {
+        height: 35vh;
+        width: 35vh;
+        margin: 1vh;
+    }
+
+        .igc.igi a {
+            display: table;
+            vertical-align: middle;
+            width: 100%;
+            height: 100%;
+        }
+
+        .igc.igi img {
+            display: table-cell;
+            height: 60vh;
+            position: relative;
+            top: 0vh;
+            left: -20vh;
+            vertical-align: middle;
+            opacity: 0.3;
+        }
+
+        .igc.igi div.igd {
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            height: 100%;
+            width: 100%;
+            padding: 1rem;
+            font-size: 1.5rem;
+            line-height: 3rem;
+            padding-top: calc(17.5vh - 1.5rem);
+            text-align: center;
+            font-weight: 200;
+        }
+
+        .igc.igi:hover img {
+            opacity: 0;
+        }
+
+        .igc.igi.dhdw {
+            height: 72vh;
+            width: 72vh;
+            margin: 1vh;
+        }
+
+        .igc.igi.nhdw {
+            height: 35vh;
+            width: 72vh;
+        }
+
+        .igc.igi.dhdw img {
+            height: 72vh;
+        }
+
+        .igc.igi.nhdw img {
+            width: 102vh;
+            height: auto;
+        }
+
+        .igc.igi.dhdw div.igd {
+            padding-top: calc(36vh - 1.5rem);
+        }
