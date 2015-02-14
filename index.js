@@ -1,76 +1,154 @@
-﻿function currentXPosition() {
-    if (self.pageXOffset) return self.pageXOffset;
+﻿window.onload = function () {
 
-    if (document.documentElement && document.documentElement.scrollLeft)
-        return document.documentElement.scrollLeft;
+    var tog_menu = 0;
+    var tog_search = 0;
+    var width = document.documentElement.clientWidth + 1;
+    var height = document.documentElement.clientHeight + 1;
 
-    if (document.body.scrollLeft) return document.body.scrollLeft;
-    return 0;
-}
-
-
-var tog_menu = 0;
-var tog_search = 0;
-//$("#navi").attr("class", "idle");
-//$("#mb1, #mb2, #mb3").attr("class", "mnorm");
-var width = document.documentElement.clientWidth;
-var height = document.documentElement.clientHeight;
-var curr_x = currentXPosition();
+    
 
 
-var isOpera = !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
-var isFirefox = typeof InstallTrigger !== 'undefined';
-var isSafari = Object.prototype.toString.call(window.HTMLElement).indexOf('Constructor') > 0;
-var isChrome = !!window.chrome && !isOpera;
-var isIE = /*@cc_on!@*/false || document.documentMode;
+    var mb = document.getElementById("m_button");
+    mb.addEventListener("click", tog_m);
 
-if (isChrome || isOpera || isSafari)
-    var whole = $("body");
-else
-    var whole = $("html");
-
-
-
-$("#m_button").click(function () {
-    if (tog_menu == 0) {
-        $("#navi").attr("class", "active");
-        $("#mb1, #mb2, #mb3").attr("class", "mact");
-        tog_menu = 1;
-    } else {
-        $("#navi").attr("class", "idle");
-        $("#mb1, #mb2, #mb3").attr("class", "mnorm");
-        tog_menu = 0;
+    function tog_m() {
+        if (tog_menu == 0) {
+            document.getElementById("navi").className = "active";
+            document.getElementById("mb1").className = "mact";
+            document.getElementById("mb2").className = "mact";
+            document.getElementById("mb3").className = "mact";
+            tog_menu = 1;
+        } else {
+            document.getElementById("navi").className = "idle";
+            document.getElementById("mb1").className = "mnorm";
+            document.getElementById("mb2").className = "mnorm";
+            document.getElementById("mb3").className = "mnorm";
+            tog_menu = 0;
+        }
     }
-});
+
+    //canvas
+
+    var colt = '#000000';
+    var colb = '#000000';
+
+    var rgbt = [0, 0, 0];
+    var rgbb = [0, 0, 0];
+
+    var mint = [0, 0, 20];
+    var minb = [10, 0, 20];
+    var maxt = [100, 180, 255];
+    var maxb = [200, 230, 230];
+    var time = 0;
+
+
+    var c = document.getElementById("sunset");
+    c.setAttribute("style", "width:" + width + "px;height:" + height+"px");
+    c.style.width = ""+width;
+    c.style.height = ""+height;
+    var ctx = c.getContext("2d");
+
+
+    window.onresize = ud_dim;
+
+    function ud_dim() {
+        //update dimensions -> Bildschirmmaße für Canvas updaten
+        width = document.documentElement.clientWidth + 1;
+        height = document.documentElement.clientHeight + 1;
+        c.setAttribute("style", "width:" + width + "px;height:" + height + "px");
+        c.style.width = "" + width;
+        c.style.height = "" + height;
+        ctx = c.getContext("2d");
+    }
+
+
+   
+
+    function daytime() {
+        dayLength = 1200;
+        time = (time + 1) % dayLength;
+        colt = '#';
+        colb = '#';
+
+        var dcolt = [0, 0, 0];
+        var dcolb = [0, 0, 0];
+
+        if (time < dayLength / 6) {
+            //morgens
+            dcolt = [0.5, 0, 1];
+            dcolb = [1.2, 0.5, 0.3];
+            maxt = [200, 180, 255];
+            maxb = [240, 180, 255];
+        } else if (time < 2 * dayLength / 6) {
+            //vormittags
+            dcolt = [-0.2, 0.8, 2];
+            dcolb = [-0.2, 1, 1];
+        } else if (time < 3 * dayLength / 6) {
+            //mittags
+            dcolt = [-0.3, -0.1, 0.2];
+            dcolb = [0.7, 0.1, -0.6];
+            maxt = [100, 180, 255];
+            maxb = [240, 180, 255];
+        } else if (time < 4 * dayLength / 6) {
+            //abends
+            dcolt = [-1, -2, -0.5];
+            dcolb = [1.5, -1, -2];
+            maxt = [200, 180, 255];
+            maxb = [240, 230, 180];
+        } else if (time < 5 * dayLength / 6) {
+            //nachts
+            dcolt = [-2, -3, -1];
+            dcolb = [-1, -2, -1];
+        } else {
+            //mitternachts
+            dcolt = [-2, -3, -3];
+            dcolb = [-2, -3, -3];
+        }
 
 
 
-var scroll_correct = false;
-function prllx() {
-    if (window.innerHeight <= window.innerWidth) {
-        clearTimeout($.data(this, 'scrollTimer'));
-        var curr_x = currentXPosition();
-        $.data(this, 'scrollTimer', setTimeout(function () {
-            if (scroll_correct == false) {
-                scroll_correct = true;
-                var act_el = Math.floor(((curr_x/1.1) - width * 0.5) / width);     //adjust multiplier
-                if (act_el >= 0) {
-                    whole.stop().animate({
-                        scrollLeft: width * 1.1 * (act_el + 1)                     //adjust multiplier
-                    }, 500, "easeOutCubic");
-                }
+        for (var i = 0; i < 3; i++) {
+            dcolt[i] = dcolt[i] * 1000 / dayLength;
+            dcolb[i] = dcolb[i] * 1000 / dayLength;
+
+            rgbt[i] += dcolt[i];
+            rgbb[i] += dcolb[i];
+            if (rgbt[i] < mint[i]) {
+                rgbt[i] = mint[i];
+            } else if (rgbt[i] > maxt[i]) {
+                rgbt[i] = maxt[i];
             }
-        }, 600));
+            if (rgbb[i] < minb[i]) {
+                rgbb[i] = minb[i];
+            } else if (rgbb[i] > maxb[i]) {
+                rgbb[i] = maxb[i];
+            }
+
+            colt += ('0' + (rgbt[i] | 0).toString(16)).substr(-2);
+            colb += ('0' + (rgbb[i] | 0).toString(16)).substr(-2);
+        }
+        updateCanvas();
     }
+
+
+    requestAnimationFrame(daytime);
+    var iv = setInterval(function () {
+        requestAnimationFrame(daytime);
+    }, 40);
+
+
+    function updateCanvas() {
+        var grd = ctx.createLinearGradient(0, 0, 0, 140);
+        grd.addColorStop(0, colt);
+        grd.addColorStop(1, colb);
+        ctx.fillStyle = grd;
+        ctx.fillRect(0, 0, width, height);
+    }
+    console.log(width);
+    console.log(height);
+
+
+
+
+
 };
-
-$("a.scroll").click(function (event) {
-    event.preventDefault();
-    whole.animate({ scrollLeft: $(this.hash).offset().left }, 1500);
-    //$("a.scroll").attr("class", "link scroll");
-    //$(this).attr("class", "link clicked scroll");
-
-    $("#navi").attr("class", "idle");
-    $("#mb1, #mb2, #mb3").attr("class", "mnorm");
-    tog_menu = 0;
-});

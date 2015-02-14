@@ -42,6 +42,20 @@ section, footer {
         width: 100%;
     }
 
+canvas {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    z-index: 0;
+}
+
+#sil {
+    position: fixed;
+    bottom: -10%;
+    left: 0%;
+    width: 100%;
+}
+
 #p1_bg {
     width: 50vw;
     height: 100vh;
@@ -55,7 +69,7 @@ section, footer {
     left: 0%;
     height: 100%;
     width: 115%;
-    z-index: 0;
+    z-index: -1;
 }
 
     #p1_bg_img:after {
