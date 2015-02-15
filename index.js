@@ -4,10 +4,6 @@
     var tog_search = 0;
     var width = document.documentElement.clientWidth + 1;
     var height = document.documentElement.clientHeight + 1;
-
-    
-
-
     var mb = document.getElementById("m_button");
     mb.addEventListener("click", tog_m);
 
@@ -28,6 +24,7 @@
     }
 
     //canvas
+    //geschrieben von der DigitalHome Gruppe
 
     var colt = '#000000';
     var colb = '#000000';
@@ -42,11 +39,11 @@
     var time = 0;
 
 
-    var c = document.getElementById("sunset");
-    c.setAttribute("style", "width:" + width + "px;height:" + height+"px");
-    c.style.width = ""+width;
-    c.style.height = ""+height;
-    var ctx = c.getContext("2d");
+    var s = document.getElementById("sunset");
+    s.setAttribute("style", "width:" + width + "px;height:" + height+"px");
+    s.style.width = ""+width;
+    s.style.height = ""+height;
+    var ctx = s.getContext("2d");
 
 
     window.onresize = ud_dim;
@@ -55,9 +52,9 @@
         //update dimensions -> Bildschirmmaße für Canvas updaten
         width = document.documentElement.clientWidth + 1;
         height = document.documentElement.clientHeight + 1;
-        c.setAttribute("style", "width:" + width + "px;height:" + height + "px");
-        c.style.width = "" + width;
-        c.style.height = "" + height;
+        s.setAttribute("style", "width:" + width + "px;height:" + height + "px");
+        s.style.width = "" + width;
+        s.style.height = "" + height;
         ctx = c.getContext("2d");
     }
 
@@ -133,6 +130,7 @@
 
     requestAnimationFrame(daytime);
     var iv = setInterval(function () {
+        //rekursiver Aufruf der requestAnimationFrame Methode, um stabile 60fps zu gewährleisten
         requestAnimationFrame(daytime);
     }, 40);
 
@@ -144,8 +142,6 @@
         ctx.fillStyle = grd;
         ctx.fillRect(0, 0, width, height);
     }
-    console.log(width);
-    console.log(height);
 
 
 
