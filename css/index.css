@@ -110,9 +110,9 @@ div.trigon, div.trigon:before, .mnorm, .mact, .mnorm:after, .mact:after, #s_bar,
     nav.idle {
         left: -300px;
         padding-top: 100px;
-        -webkit-transition: all 0.25s ease, padding 0.5s 1s ease-in-out;
-    -moz-transition: all 0.25s ease, padding 0.5s 1s ease-in-out;
-    -o-transition: all 0.25s ease, padding 0.5s 1s ease-in-out;
+        -webkit-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
     transition: all 0.3s ease-in;
         
     }
@@ -120,9 +120,9 @@ div.trigon, div.trigon:before, .mnorm, .mact, .mnorm:after, .mact:after, #s_bar,
     nav.active {
         left: 0px;
         padding-top: 100px;
-        -webkit-transition: all 0.25s ease, padding 0.5s ease-in-out;
-    -moz-transition: all 0.25s ease, padding 0.5s ease-in-out;
-    -o-transition: all 0.25s ease, padding 0.5s ease-in-out;
+        -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
     transition: all 0.3s ease-out;
     }
 
@@ -140,17 +140,17 @@ div.trigon, div.trigon:before, .mnorm, .mact, .mnorm:after, .mact:after, #s_bar,
     }
     nav.idle > a {
         margin-left: -200px;
-        -webkit-transition: all 0.25s ease, padding 0s 1s ease-in-out;
-    -moz-transition: all 0.25s ease, padding 0s 1s ease-in-out;
-    -o-transition: all 0.25s ease, padding 0s 0s ease-in-out;
+        -webkit-transition: all 0.3s ease, margin 0s 0.3s ease;
+    -moz-transition: all 0.3s ease, margin 0s 0.3s ease;
+    -o-transition: all 0.3s ease, margin 0s 0.3s ease;
     transition: all 0.3s ease, margin 0s 0.3s ease;
     }
     nav.active > a {
         margin-left: 0px;
         
-        -webkit-transition: all 0.4s ease, padding 0.5s ease-in-out;
-    -moz-transition: all 0.25s ease, padding 0.5s ease-in-out;
-    -o-transition: all 0.25s ease, padding 0.5s ease-in-out;
+        -webkit-transition: all 0.3s ease, margin 0.3s 0.3s ease;
+    -moz-transition: all 0.3s ease, margin 0.3s 0.3s ease;
+    -o-transition: all 0.3s ease, margin 0.3s 0.3s ease;
     transition: all 0.3s ease, margin 0.3s 0.3s ease;
     }
         nav.active > a:nth-of-type(1) {
@@ -177,6 +177,9 @@ div.trigon, div.trigon:before, .mnorm, .mact, .mnorm:after, .mact:after, #s_bar,
         nav.active > a:nth-of-type(8) {
             transition-delay: 0s, 0.8s;
         }
+
+
+
         
 
         #navi > a:hover {
