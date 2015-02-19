@@ -1,7 +1,6 @@
 ﻿window.onload = function () {
 
-    var tog_menu = 1;
-    tog_m();
+    var tog_menu = 0;
     var tog_search = 0;
     var width = document.documentElement.clientWidth + 1;
     var height = document.documentElement.clientHeight + 1;
@@ -41,20 +40,22 @@
 
 
     var s = document.getElementById("sunset");
-    var ctx;
-    ud_dim();
+    s.setAttribute("style", "width:" + width + "px;height:" + height+"px");
+    s.style.width = ""+width;
+    s.style.height = ""+height;
+    var ctx = s.getContext("2d");
+
 
     window.onresize = ud_dim;
 
     function ud_dim() {
         //update dimensions -> Bildschirmmaße für Canvas updaten
-        width = document.documentElement.clientWidth;
-        height = document.documentElement.clientHeight;
+        width = document.documentElement.clientWidth + 1;
+        height = document.documentElement.clientHeight + 1;
         s.setAttribute("style", "width:" + width + "px;height:" + height + "px");
-        s.style.width = "1";
+        s.style.width = "" + width;
         s.style.height = "" + height;
-        ctx = s.getContext("2d");
-        ctx.scale(width/5, 21);
+        ctx = c.getContext("2d");
     }
 
 
@@ -135,12 +136,11 @@
 
 
     function updateCanvas() {
-        var grd = ctx.createLinearGradient(0, 0, 0, 5);
+        var grd = ctx.createLinearGradient(0, 0, 0, 140);
         grd.addColorStop(0, colt);
         grd.addColorStop(1, colb);
         ctx.fillStyle = grd;
-        
-        ctx.fillRect(0, 0, 1, height/120);
+        ctx.fillRect(0, 0, width, height);
     }
 
 
