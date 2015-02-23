@@ -61,7 +61,7 @@
    
 
     function daytime() {
-        dayLength = 1200;
+        dayLength = 800;
         time = (time + 1) % dayLength;
         colt = '#';
         colb = '#';
@@ -131,7 +131,7 @@
     var iv = setInterval(function () {
         //rekursiver Aufruf der requestAnimationFrame Methode, um stabile 60fps zu gewährleisten
         requestAnimationFrame(daytime);
-    }, 40);
+    }, 60);
 
 
     function updateCanvas() {
