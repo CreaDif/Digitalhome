@@ -33,11 +33,14 @@
     var rgbt = [0, 0, 0];
     var rgbb = [0, 0, 0];
 
-    var mint = [0, 0, 20];
-    var minb = [10, 0, 20];
-    var maxt = [100, 180, 255];
-    var maxb = [200, 230, 230];
+    var mint = [0, 0, 0];
+    var minb = [0, 0, 0];
+    var maxt = [0, 0, 0];
+    var maxb = [0, 0, 0];
+    var stim = 0;
+    var etim = 0;
     var time = 0;
+    var tswitch = 1;
 
 
     var s = document.getElementById("sunset");
@@ -61,69 +64,96 @@
    
 
     function daytime() {
-        dayLength = 800;
+        dayLength = 480;
         time = (time + 1) % dayLength;
         colt = '#';
         colb = '#';
 
-        var dcolt = [0, 0, 0];
-        var dcolb = [0, 0, 0];
-
-        if (time < dayLength / 6) {
-            //morgens
-            dcolt = [0.5, 0, 1];
-            dcolb = [1.2, 0.5, 0.3];
-            maxt = [200, 180, 255];
-            maxb = [240, 180, 255];
-        } else if (time < 2 * dayLength / 6) {
-            //vormittags
-            dcolt = [-0.2, 0.8, 2];
-            dcolb = [-0.2, 1, 1];
-        } else if (time < 3 * dayLength / 6) {
-            //mittags
-            dcolt = [-0.3, -0.1, 0.2];
-            dcolb = [0.7, 0.1, -0.6];
-            maxt = [100, 180, 255];
-            maxb = [240, 180, 255];
-        } else if (time < 4 * dayLength / 6) {
-            //abends
-            dcolt = [-1, -2, -0.5];
-            dcolb = [1.5, -1, -2];
-            maxt = [200, 180, 255];
-            maxb = [240, 230, 180];
-        } else if (time < 5 * dayLength / 6) {
-            //nachts
-            dcolt = [-2, -3, -1];
-            dcolb = [-1, -2, -1];
+        if (time < dayLength * 6 / 24 && tswitch != 0) {
+            tswitch = 0;
+            stim = 0;
+            etim = 6;
+            mint = [0, 0, 0];
+            minb = [0, 0, 0];
+            maxt = [82, 1, 187];
+            maxb = [207, 84, 70];
+        } else if (time < dayLength * 9 / 24 && time >= dayLength * 6 / 24 && tswitch != 1) {
+            tswitch = 1;
+            stim = 6;
+            etim = 9;
+            mint = [82, 1, 187];
+            minb = [207, 84, 70];
+            maxt = [49, 132, 255];
+            maxb = [175, 180, 235];
+        } else if (time < dayLength * 12 / 24 && time >= dayLength * 9 / 24 && tswitch != 2) {
+            tswitch = 2;
+            stim = 9;
+            etim = 12;
+            mint = [49, 132, 255];
+            minb = [175, 180, 235];
+            maxt = [0, 113, 254];
+            maxb = [240, 178, 133];
+        } else if (time < dayLength * 18 / 24 && time >= dayLength * 12 / 24 && tswitch != 3) {
+            tswitch = 3;
+            stim = 12;
+            etim = 18;
+            mint = [0, 113, 254];
+            minb = [240, 178, 133];
+            maxt = [0, 0, 170];
+            maxb = [238, 10, 20];
+        } else if (time < dayLength * 21 / 24 && time >= dayLength * 18 / 24 && tswitch != 4) {
+            tswitch = 4;
+            stim = 18;
+            etim = 21;
+            mint = [0, 0, 170];
+            minb = [238, 10, 20];
+            maxt = [0, 0, 0];
+            maxb = [0, 0, 0];
+        } else if (time <= dayLength * 24 / 24 && time >= dayLength * 21 / 24 && tswitch != 5) {
+            tswitch = 5;
+            stim = 21;
+            etim = 24;
+            mint = [0, 0, 0];
+            minb = [0, 0, 0];
+            maxt = [0, 0, 0];
+            maxb = [0, 0, 0];
         } else {
-            //mitternachts
-            dcolt = [-2, -3, -3];
-            dcolb = [-2, -3, -3];
+            //random shit -> dieser Fall wird nie eintreten
+            tswitch = 6;
+            stim = 0;
+            etim = 6;
+            mint = [0, 0, 0];
+            minb = [0, 0, 0];
+            maxt = [0, 0, 0];
+            maxb = [0, 0, 0];
         }
+       
+        
 
-
-
+        //var debugr = time;
+        //var debugl = time;
         for (var i = 0; i < 3; i++) {
-            dcolt[i] = dcolt[i] * 1000 / dayLength;
-            dcolb[i] = dcolb[i] * 1000 / dayLength;
+            var mt = (maxt[i] - mint[i]) / ((etim - stim));
+            var mb = (maxb[i] - minb[i]) / ((etim - stim));
+            
+            rgbt[i] = mint[i] + mt * (time * 24 / dayLength - stim);
+            rgbb[i] = minb[i] + mb * (time * 24 / dayLength - stim);
 
-            rgbt[i] += dcolt[i];
-            rgbb[i] += dcolb[i];
-            if (rgbt[i] < mint[i]) {
-                rgbt[i] = mint[i];
-            } else if (rgbt[i] > maxt[i]) {
-                rgbt[i] = maxt[i];
-            }
-            if (rgbb[i] < minb[i]) {
-                rgbb[i] = minb[i];
-            } else if (rgbb[i] > maxb[i]) {
-                rgbb[i] = maxb[i];
-            }
+            rgbt[i] = rgbt[i] >= 0 ? rgbt[i] : 0;
+            rgbb[i] = rgbb[i] >= 0 ? rgbb[i] : 0;
+
+            rgbt[i] = rgbt[i] <= 255 ? rgbt[i] : 255;
+            rgbb[i] = rgbb[i] <= 255 ? rgbb[i] : 255;
 
             colt += ('0' + (rgbt[i] | 0).toString(16)).substr(-2);
             colb += ('0' + (rgbb[i] | 0).toString(16)).substr(-2);
+            
+            //debugl += " | " + mt + " | " + colt;
+            //debugr += " | " + mb + " | " + (rgbb[i] | 0) + " | " + colb;
         }
+        //console.log(debugr);
         updateCanvas();
+        
     }
 
 
@@ -131,7 +161,7 @@
     var iv = setInterval(function () {
         //rekursiver Aufruf der requestAnimationFrame Methode, um stabile 60fps zu gewährleisten
         requestAnimationFrame(daytime);
-    }, 60);
+    }, 100);
 
 
     function updateCanvas() {
