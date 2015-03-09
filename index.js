@@ -39,7 +39,7 @@
     var maxb = [0, 0, 0];
     var stim = 0;
     var etim = 0;
-    var time = 0;
+    var time = 200;
     var tswitch = 1;
 
 
@@ -64,7 +64,7 @@
    
 
     function daytime() {
-        dayLength = 480;
+        dayLength = 960;
         time = (time + 1) % dayLength;
         colt = '#';
         colb = '#';
@@ -119,13 +119,6 @@
             maxb = [0, 0, 0];
         } else {
             //random shit -> dieser Fall wird nie eintreten
-            tswitch = 6;
-            stim = 0;
-            etim = 6;
-            mint = [0, 0, 0];
-            minb = [0, 0, 0];
-            maxt = [0, 0, 0];
-            maxb = [0, 0, 0];
         }
        
         
