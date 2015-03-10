@@ -176,7 +176,7 @@ div.trigon, div.trigon:before, .mnorm, .mact, .mnorm:after, .mact:after, #s_bar,
             transition-delay: 0s, 0.8s;
         }
 
-    #navi img {
+    #navi > a > img {
         position: absolute;
         right: 35px;
         height: 30px;
