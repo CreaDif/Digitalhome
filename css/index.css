@@ -102,13 +102,13 @@ div.trigon, div.trigon:before, .mnorm, .mact, .mnorm:after, .mact:after, #s_bar,
     #navi {
         position: fixed;
         top: 0%;
-        min-width: 250px;
+        min-width: 300px;
         height: 100%;
         z-index: 5;
     }
 
     nav.idle {
-        left: -300px;
+        left: -200px;
         padding-top: 100px;
         -webkit-transition: all 0.3s ease-in;
     -moz-transition: all 0.3s ease-in;
@@ -128,30 +128,28 @@ div.trigon, div.trigon:before, .mnorm, .mact, .mnorm:after, .mact:after, #s_bar,
 
     #navi > a {
         display: block;
-        width: 100%;
-        padding-top: 20px;
-        padding-bottom: 20px;
         padding-left: 30px;
         text-decoration: none;
         text-align: left;
         font-size: 1.2rem;
-        line-height: 1.8rem;
+        line-height: 70px;
         font-weight: 300;
     }
     nav.idle > a {
         margin-left: -200px;
-        -webkit-transition: all 0.3s ease, margin 0s 0.3s ease;
-    -moz-transition: all 0.3s ease, margin 0s 0.3s ease;
-    -o-transition: all 0.3s ease, margin 0s 0.3s ease;
-    transition: all 0.3s ease, margin 0s 0.3s ease;
+        width: calc(100% + 200px);
+        -webkit-transition: all 0.3s ease, margin 0s 0.3s ease, width 0 0.3s ease;
+    -moz-transition: all 0.3s ease, margin 0s 0.3s ease, width 0 0.3s ease;
+    -o-transition: all 0.3s ease, margin 0s 0.3s ease, width 0 0.3s ease;
+    transition: all 0.3s ease, margin 0s 0.3s ease, width 0 0.3s ease;
     }
     nav.active > a {
         margin-left: 0px;
-        
-        -webkit-transition: all 0.3s ease, margin 0.3s 0.3s ease;
-    -moz-transition: all 0.3s ease, margin 0.3s 0.3s ease;
-    -o-transition: all 0.3s ease, margin 0.3s 0.3s ease;
-    transition: all 0.3s ease, margin 0.3s 0.3s ease;
+        width: 100%;
+        -webkit-transition: all 0.3s ease, margin 0.3s 0.3s ease, width 0.3s 0.3s ease;
+    -moz-transition: all 0.3s ease, margin 0.3s 0.3s ease, width 0.3s 0.3s ease;
+    -o-transition: all 0.3s ease, margin 0.3s 0.3s ease, width 0.3s 0.3s ease;
+    transition: all 0.3s ease, margin 0.3s 0.3s ease, width 0.3s 0.3s ease;
     }
         nav.active > a:nth-of-type(1) {
             transition-delay: 0s, 0.1s;
@@ -178,7 +176,16 @@ div.trigon, div.trigon:before, .mnorm, .mact, .mnorm:after, .mact:after, #s_bar,
             transition-delay: 0s, 0.8s;
         }
 
-
+    #navi img {
+        position: absolute;
+        right: 35px;
+        height: 30px;
+        -webkit-transform: translate(0px, 20px);
+        -moz-transform: translate(0px, 20px);
+        -o-transform: translate(0px, 20px);
+        -ms-transform: translate(0px, 20px);
+        transform: translate(0px, 20px);
+    }
 
         
 
@@ -215,7 +222,7 @@ div.trigon, div.trigon:before, .mnorm, .mact, .mnorm:after, .mact:after, #s_bar,
     #menu {
         position: fixed;
         top: 25px;
-        left: 50px;
+        left: 25px;
         width: 250px;
         height: 50px;
         z-index: 15;
