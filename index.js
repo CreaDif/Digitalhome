@@ -171,3 +171,37 @@
 
 
 };
+
+
+//parallax scrolling
+
+
+function currentXPosition() {
+    if (self.pageXOffset) return self.pageXOffset;
+
+    if (document.documentElement && document.documentElement.scrollLeft)
+        return document.documentElement.scrollLeft;
+
+    if (document.body.scrollLeft) return document.body.scrollLeft;
+    return 0;
+}
+
+
+
+var scroll_correct = false;
+function prllx() {
+    var curr_x = currentXPosition();
+    var speed = 0.5;
+    var p1_img = document.getElementById("p1_bg_img");
+    p1_img.style.left = curr_x * speed + 50 + "px";
+    scroll_correct = false;
+};
+function scrollex() {
+    if (scroll_correct == false) {
+        scroll_correct = true;
+        requestAnimationFrame(prllx);
+    }
+}
+window.onscroll = function (event) {
+    scrollex();
+};

@@ -72,9 +72,9 @@ canvas {
 #p1_bg_img {
     position: relative;
     top: 0%;
-    left: 0%;
+    left: 50px;
     height: 100%;
-    width: 115%;
+    width: 110%;
     z-index: -1;
 }
 
@@ -86,7 +86,7 @@ canvas {
         bottom: 0%;
         right: 0%;
         opacity: 1;
-        background-image: url("../bilder/panel3.jpg");
+        background-image: url("../bilder/hall1.png");
         background-size: cover;
         background-position: center;
     }
