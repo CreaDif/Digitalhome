@@ -5,6 +5,10 @@
 @import url('tiles.css');
 @import url('print.css');
 
+    /* 
+    Reset all paddings, margins and borders.
+    Substract padding and border from box dimensions.
+    */
 *, *:before, *:after, #s_bar {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -14,6 +18,10 @@
     border: 0px;
 }
 
+
+    /*
+    Global transition style. Individual transition are declared in regarding class declaration.
+    */
 a, a:hover, a:before, a:hover:before, a:after, a:hover:after, .igc img, .igd, .igd:before {
     -webkit-transition: all 0.25s ease;
     -moz-transition: all 0.25s ease;
@@ -21,6 +29,9 @@ a, a:hover, a:before, a:hover:before, a:after, a:hover:after, .igc img, .igd, .i
     transition: all 0.25s ease;
 }
 
+    /*
+    link style normalize.
+    */
     a, a:hover, a:before, a:hover:before {
         text-decoration: none;
         text-align: center;
@@ -28,12 +39,19 @@ a, a:hover, a:before, a:hover:before, a:after, a:hover:after, .igc img, .igd, .i
         line-height: 1.8rem;
     }
 
+    /*
+    Global transition style for longer animations. Individual transition are declared in regarding class declaration.
+    */
 div.trigon, div.trigon:before, .mnorm, .mact, .mnorm:after, .mact:after, #s_bar, #sb1:after, #sb2, #sb2:after, #sb3:after, #sb4, input {
     -webkit-transition: all 0.4s ease;
     -moz-transition: all 0.4s ease;
     -o-transition: all 0.4s ease;
     transition: all 0.4s ease;
 }
+
+/*
+    Normalize transform origin.
+    */
 
     div.u_arrow, div.l_arrow, a.trilink, a.trilink div.trigon:before, a.trilink:hover div.trigon, .mnorm, .mact, .mnorm:after, .mact:after, #sb2:after {
         -webkit-transform-origin: 0% 0%;
@@ -63,6 +81,9 @@ div.trigon, div.trigon:before, .mnorm, .mact, .mnorm:after, .mact:after, #s_bar,
         height: 100%;
     }
 
+    /*
+        Arrow on homepage above the fold.
+        */
     #scroll_tipp {
         display: inline-block;
         width: 4rem;
@@ -98,7 +119,9 @@ div.trigon, div.trigon:before, .mnorm, .mact, .mnorm:after, .mact:after, #s_bar,
             border-left: none;
             border-bottom: none;
         }
-
+/*
+    Self explanatory
+    */
     #navi {
         position: fixed;
         top: 0%;
@@ -236,7 +259,9 @@ div.trigon, div.trigon:before, .mnorm, .mact, .mnorm:after, .mact:after, #s_bar,
         height: 100%;
         overflow: hidden;
     }
-
+    /*
+        Search bar.
+        */
     #search {
         position: fixed;
         top: 25px;
@@ -244,6 +269,7 @@ div.trigon, div.trigon:before, .mnorm, .mact, .mnorm:after, .mact:after, #s_bar,
         height: 50px;
         font-size: 0em;
         vertical-align: top;
+        
     }
 
     #s_button {
@@ -252,6 +278,8 @@ div.trigon, div.trigon:before, .mnorm, .mact, .mnorm:after, .mact:after, #s_bar,
         width: 50px;
         position: relative;
         overflow: hidden;
+        /*transform-origin: 100% 0%;
+        transform: scale(10);*/
     }
 
     #s_bar {
@@ -284,7 +312,9 @@ div.trigon, div.trigon:before, .mnorm, .mact, .mnorm:after, .mact:after, #s_bar,
         font-weight: 300;
         height: 1.8rem;
     }
-
+    /*
+        .s_idle never happening
+        */
     .s_idle input {
         width: 0px;
         padding-left: 0px;
