@@ -22,7 +22,7 @@
         background-color: #000;
     }
 
-    body, div.table:after, #s4:after, section:nth-of-type(2n-1):before, section:nth-of-type(2n) h2, footer h2, .igc {
+    body, div.table:after, #s4:after, section:nth-of-type(2n-1):before, section:nth-of-type(2n) h2, footer h2 {
         background-color: #111;
     }
 
@@ -34,7 +34,7 @@
         background-color: #ccc;
     }
 
-    #scroll_tipp:before, #mb1.mact:after, #mb2.mact:after, #mb3.mact:after, .cont_p a.a_color, .cont_block a {
+    #scroll_tipp:before, #mb1.mact:after, #mb2.mact:after, #mb3.mact:after, .cont_block a {
         background-color: #f60;
     }
 
@@ -47,11 +47,11 @@
         color: #ccc;
     }
 
-        #navi > a:hover, section, footer, section:nth-of-type(2n-1), .cont_p a.a_color:hover, .cont_block a:hover, .igc.igl a:hover, .igc.igi:hover div.igd {
+        #navi > a:hover, section, footer, section:nth-of-type(2n-1), .cont_block a:hover, .igc.igl a:hover, .igc.igi:hover div.igd {
             color: #eee;
         }
 
-    #s_bar, section:nth-of-type(2n), .cont_p a.a_color, .cont_block a {
+    #s_bar, section:nth-of-type(2n), .cont_block a {
         color: #111;
     }
 
@@ -71,7 +71,7 @@
         border-color: #111;
     }
 
-        #navi > a:hover:before, .cont_p a.a_color:hover:before, .cont_block a:hover:before, .igc.igl a:hover:before, .igc.igi:hover div.igd:before {
+        #navi > a:hover:before, .cont_block a:hover:before, .igc.igl a:hover:before, .igc.igi:hover div.igd:before {
             border-color: #eee;
         }
 
