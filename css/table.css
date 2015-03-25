@@ -54,19 +54,6 @@
     .cont_table_col:last-of-type .cont_table_cell {
         border-right: none;
     }
-
-    /*
-    General Styles for a.a_table are set in layout.css
-    */
-    .cont_p a.a_table {
-        display: block;
-        color: #111;
-        padding: 0px;
-        margin: 0px;
-    }
-        .cont_p a.a_table:hover:before {
-            border-color: #111;
-        }
 }
 
 
