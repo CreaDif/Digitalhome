@@ -1,5 +1,7 @@
 ﻿#navi {
     @media screen {
+        color: #ccc;
+        background-color: #000;
         > a {
             display: block;
             padding-left: 30px;
@@ -8,6 +10,7 @@
             font-size: 1.2rem;
             line-height: 70px;
             font-weight: 300;
+            color: #ccc;
             > img {
                 position: absolute;
                 right: 35px;
@@ -19,6 +22,7 @@
                 background-color: #222;
                 &:before {
                     margin-right: 10px;
+                    border-color: #eee;
                 }
             }
             &:before {
@@ -34,6 +38,7 @@
                 border: 2px solid;
                 border-bottom: none;
                 border-left: none;
+                border-color: #000;
             }
         }
     }
@@ -147,6 +152,10 @@ nav {
             height: 4px;
             background-color: #bbb;
             transform: scaleX(3);
+            background-color: #111;
+        }
+        &.mact:after {
+            background-color: #f60;
         }
     }
 }
@@ -233,6 +242,7 @@ nav {
                     &:after {
                         transform: rotate(45deg) scaleX(2.55);
                         transition-delay: 0.2s;
+                        background-color: #06f;
                     }
                 }
             }
@@ -248,6 +258,9 @@ nav {
                     left: 10px;
                     transform: translate3d(0px, 0px, 0px);
                     transition-delay: 0.1s;
+                    &:after {
+                        background-color: #06f;
+                    }
                 }
             }
 
@@ -266,6 +279,7 @@ nav {
                         transform: rotate(-45deg) scaleX(2.55);
                         transform-origin: 0% 0%;
                         transition-delay: 0.2s;
+                        background-color: #06f;
                     }
                 }
             }
@@ -303,6 +317,7 @@ nav {
         font-family: Raleway, sans-serif;
         font-weight: 300;
         overflow: hidden;
+        color: #111;
     }
 }
 
@@ -314,6 +329,7 @@ nav {
         left: 5%;
         width: 90%;
         height: 2px;
+        background-color: #222;
     }
 }
 
@@ -323,6 +339,7 @@ nav {
         line-height: 1.8rem;
         font-weight: 300;
         height: 1.8rem;
+        background-color: rgba(0,0,0,0);
     }
 }
 
@@ -365,6 +382,7 @@ nav {
             width: 15px;
             z-index: 1;
             transform: rotate(45deg) translate(0px, -3px);
+            background-color: #06f;
         }
     }
 }
@@ -377,6 +395,7 @@ nav {
         width: 25px;
         height: 4px;
         transform-origin: 100% 50%;
+        background-color: #06f;
     }
 }
 
@@ -402,13 +421,15 @@ nav {
         overflow: hidden;
         /*transform-origin: 100% 0%;
         transform: scale(10);*/
+        background-color: #000;
         &:hover {
             #sb1:after {
                 width: 125px;
                 height: 125px;
-
+                border-color: #ccc;
                 border-radius: 100px;
                 transform: rotate(45deg) translate(-60px, 0px);
+                border-color: #06f;
             }
 
             #sb2 {

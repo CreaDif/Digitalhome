@@ -26,7 +26,7 @@
     left: 50px;
     height: 100%;
     width: 110%;
-    z-index: -1;
+    z-index: 0;
     
     &:after {
         /*
@@ -43,5 +43,46 @@
         background-image: url("../images/hall1.png");
         background-size: cover;
         background-position: center;
+    }
+}
+
+// Specific Properties
+@media screen {
+    section:nth-of-type(2n):before {
+        background-color: #ccc;
+    }
+    #s4:after, section:nth-of-type(2n-1):before, section:nth-of-type(2n) h2 {
+        background-color: #06f;
+    }
+    section:nth-of-type(2n-1) {
+        color: #eee;
+    }
+    section:nth-of-type(2n) {
+        color: #111;
+    }
+    h1 {
+        color: #06f;
+    }
+    h2 {
+        color: #f60;
+    }
+}
+
+@media print {
+    h1 {
+        color: #06f;
+    }
+    h2 {
+        color: #000;
+    }
+    p, .cont_p a, .cont_block a {
+        color: #000;
+    }
+
+        .cont_p a:after, .cont_block a:after {
+            border-color: #000;
+        }
+    .cont_p img {
+        border-color: #111;
     }
 }

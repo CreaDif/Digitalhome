@@ -1,6 +1,8 @@
 # Project Specific
 # =========================
 
+*.css
+*.html
 css/
 images/
 scripts/

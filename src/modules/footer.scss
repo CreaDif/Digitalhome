@@ -1,4 +1,12 @@
-.h_block {
-    display: block;
-    margin-bottom: 1rem;
+@media screen {
+	.h_block {
+	    display: block;
+	    margin-bottom: 1rem;
+	}
+	footer h2 {
+		background-color: #111;
+	}
+	footer {
+		color: #eee;
+	}
 }

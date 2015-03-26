@@ -4,7 +4,6 @@
     For product page with extended width.
     */
 section {
-
     &.s_double_w {
         width: 500vh;
         width: calc(310vh + 55vw);
@@ -140,7 +139,15 @@ section {
 	        width: calc(50% - 4px);
 	        border: 2px solid;
 	        margin: 2px;
+            border-color: #111;
     	}
+    }
+}
+
+.cont_p a, .cont_block a {
+    color: #000;
+    &:after {
+        border-color: #000;
     }
 }
 
@@ -153,12 +160,16 @@ section {
     padding-right: 50px;
     -webkit-transition-delay: 0.1s;
     transition-delay: 0.1s;
-
+    background-color: #f60;
+    color: #111;
     &:hover {
     	-webkit-transition-delay: 0.1s;
         transition-delay: 0.1s;
+        background-color: #06f;
+        color: #eee;
         &:before {
         	@include linkArrowHover();
+            border-color: #eee;
         }
     }
 
