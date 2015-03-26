@@ -38,6 +38,65 @@ div.u_arrow, div.l_arrow, a.trilink, a.trilink div.trigon:before, a.trilink:hove
     transform-origin: 0% 0%;
 }
 
+body {
+    @media screen {
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        width: 100%;
+        height: 100%;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        font-family: Raleway, sans-serif;
+    }
+}
+
+html {
+    @media screen {
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+#scroll_tipp {
+    @media screen {
+        display: inline-block;
+        width: 4rem;
+        height: 1rem;
+        position: relative;
+        margin-left: 4rem;
+        &:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            top: calc(50% - 1px);
+            left: 0%;
+            width: 100%;
+            height: 2px;
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            top: calc(50% - 0.7rem);
+            right: 0.175rem;
+            height: 1.4rem;
+            width: 1.4rem;
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+            border: 2px solid;
+            border-left: none;
+            border-bottom: none;
+        }
+    }
+}
+
 // LAYOUT
 
 div.table {

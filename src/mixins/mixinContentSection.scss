@@ -41,6 +41,42 @@ section {
         max-width: 30em;
         margin-left: auto;
         margin-right: auto;
+        @media screen and (min-width: 2500px) {
+            display: block;
+            margin: 6px;
+            font-size: 1.2rem;
+            line-height: 1.8rem;
+            margin-left: auto;
+            margin-right: auto;
+            -webkit-columns: 2;
+            -moz-columns: 2;
+            columns: 2;
+            -webkit-column-span: all;
+            column-span: all;
+            -webkit-column-gap: 1em;
+            -moz-column-gap: 1em;
+            column-gap: 1em;
+            -moz-column-fill: balance;
+            column-fill: balance;
+        }
+        @media screen and (min-width: 4000px) {
+            display: block;
+            margin: 6px;
+            font-size: 1.2rem;
+            line-height: 1.8rem;
+            margin-left: auto;
+            margin-right: auto;
+            -webkit-columns: 3;
+            -moz-columns: 3;
+            columns: 3;
+            -webkit-column-span: all;
+            column-span: all;
+            -webkit-column-gap: 1em;
+            -moz-column-gap: 1em;
+            column-gap: 1em;
+            -moz-column-fill: balance;
+            column-fill: balance;
+        }
     }
 
     @media print {
