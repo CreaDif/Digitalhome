@@ -1,0 +1,29 @@
+/*
+	Link arrow in Tiles and content links. Don't delete.
+	*/
+@mixin linkArrow() {
+	display: inline-block;
+    position: relative;
+    top: -1px;
+    margin-right: 5px;
+    margin-left: 5px;
+    width: 10px;
+    height: 10px;
+    content: '';
+    -webkit-transition-delay: 0.1s;
+    transition-delay: 0.1s;
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    border: 2px solid rgba(0,0,0,0);
+    border-bottom: none;
+    border-left: none;
+}
+
+@mixin linkArrowHover() {
+	margin-right: 10px;
+    -webkit-transition-delay: 0.1s;
+    transition-delay: 0.1s;
+}

@@ -1,0 +1,171 @@
+// Imports of Custom Jade Modules
+@import '../modules/menu';
+@import '../modules/footer';
+
+// Imports of Fonts
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:300|Raleway:100,200,300);
+
+// ###############################
+// Styles
+
+*, *:before, *:after, #s_bar {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+}
+
+a, a:hover, a:before, a:hover:before, a:after, a:hover:after, #navi, .igc img, .igd, .igd:before {
+        -webkit-transition: all 0.25s ease;
+    -moz-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+}
+
+a, a:hover, a:before, a:hover:before {
+    text-decoration: none;
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+}
+
+div.trigon, div.trigon:before, .mnorm, .mact, .mnorm:after, .mact:after, #s_bar, #sb1:after, #sb2, #sb2:after, #sb3:after, #sb4, input {
+    transition: all 0.4s ease;
+}
+div.u_arrow, div.l_arrow, a.trilink, a.trilink div.trigon:before, a.trilink:hover div.trigon, .mnorm, .mact, .mnorm:after, .mact:after, #sb2:after {
+    transform-origin: 0% 0%;
+}
+
+// LAYOUT
+
+div.table {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+section, footer {
+    width: 120vw;
+    height: 100vh;
+    display: table-cell;
+    table-layout: fixed;
+    vertical-align: middle;
+    padding: 0px 0px 0px 0px;
+    font-size: 1.3rem;
+    font-weight: 300;
+    position: relative;
+
+    &:before {
+    	content: '';
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        width: 101%;
+        height: 100vh;
+        overflow: hidden;
+        transform: skew(-15deg, 0deg);
+    }
+}
+
+canvas {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    z-index: 0;
+    image-rendering: optimizeSpeed;             
+    image-rendering: -moz-crisp-edges;          
+    image-rendering: -webkit-optimize-contrast; 
+    image-rendering: -o-crisp-edges;                            
+    -ms-interpolation-mode: nearest-neighbor;   
+}
+
+/*
+    Occurs with canvas' skyline image. Don't delete.
+    */
+#sil {
+    position: fixed;
+    bottom: -10%;
+    left: 0%;
+    width: 100%;
+}
+
+// PRINT
+
+@media print {
+    body {
+        font-family: Raleway, sans-serif;
+        font-weight: 300;
+    }
+
+    #navi, #menu, #m_button {
+        display: none;
+    }
+
+    section, footer {
+        display: block;
+        &:before {
+            transform: skew(0deg, 0deg);
+        }
+    }
+
+    h1, h2, h3, h4, h5, p {
+        position: relative;
+        z-index: 2;
+    }
+
+    h1 {
+        padding: 0rem;
+        display: block;
+        box-decoration-break: clone;
+        font-size: 3rem;
+        line-height: 3.5rem;
+        font-weight: 100;
+    }
+
+    h2 {
+        padding: 0rem;
+        font-size: 1.7rem;
+        line-height: 2rem;
+        font-weight: 100;
+        margin-bottom: 1rem;
+    }
+
+    p {
+        display: block;
+        padding: 10px 5px;
+        font-size: 0.8rem;
+        line-height: 1.2rem;
+    }
+}
+
+//TYPO
+
+h1, h2, h3, h4, h5, p {
+    position: relative;
+    z-index: 2;
+}
+
+h1 {
+    padding: 0.5rem;
+    padding-right: 30px;
+    display: inline;
+    box-decoration-break: clone;
+    font-size: 4.5rem;
+    line-height: 5rem;
+    font-weight: 100;
+    margin-bottom: 0rem;
+}
+
+h2 {
+    padding: 1rem;
+    display: inline;
+    box-decoration-break: clone;
+    font-size: 2rem;
+    line-height: 4rem;
+    font-weight: 200;
+    margin-bottom: 1rem;
+}

@@ -1,0 +1,192 @@
+﻿/*______________________________________________________________________________*/
+#sb1 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    transform: rotate(0deg) translate(10px, 10px);
+
+    &:after {
+        content: '';
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 25px;
+        height: 25px;
+        border-radius: 15px;
+        border: 4px solid;
+        transform-origin: 50% 50%;
+        transform: rotate(45deg);
+    }
+}
+
+#sb2 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    transform: rotate(0deg) translate(30px, 30px);
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        height: 4px;
+        width: 15px;
+        z-index: 1;
+        transform: rotate(45deg) translate(0px, -3px);
+    }
+}
+
+#sb3, #sb4 {
+    position: absolute;
+    top: 22px;
+    right: 10px;
+    width: 25px;
+    height: 4px;
+    transform-origin: 100% 50%;
+}
+
+#sb3 {
+    transform: rotate(45deg) translate(-50px, 0px);
+}
+
+#sb4 {
+    transform: rotate(-45deg) translate(-50px, 0px);
+}
+/*______________________________________________________________________________*/
+
+#s_button:hover {
+
+    #sb1:after {
+        width: 125px;
+        height: 125px;
+
+        border-radius: 100px;
+        transform: rotate(45deg) translate(-60px, 0px);
+    }
+
+    #sb2 {
+        transform: rotate(0deg) translate(10px, 22px);
+    }
+
+    #sb2:after {
+        transform: rotate(0deg) scaleX(2);
+    }
+
+    #sb3 {
+        transform: rotate(45deg) translate(1.75px, -0.25px);
+    }
+
+    #sb4 {
+        transform: rotate(-45deg) translate(2.25px, -0.25px);
+    }
+}
+
+/*______________________________________________________________________________*/
+/*______________________________________________________________________________*/
+#mb1, #mb2, #mb3 {
+    position: absolute;
+    width: 30px;
+    height: 4px;
+
+    &:after {
+        position: absolute;
+        content: '';
+        top: 0px;
+        left: 0px;
+        width: 10px;
+        height: 4px;
+        background-color: #bbb;
+        transform: scaleX(3);
+    }
+}
+/*______________________________________________________________________________*/
+
+
+/*______________________________________________________________________________*/
+#mb1 {
+
+    &.mnorm {
+        top: 10px;
+        left: 10px;
+        transition-delay: 0.2s;
+        transform: translate3d(0px, 0px, 0px);
+    }
+}
+
+#mb2 {
+
+    &.mnorm {
+        top: 22px;
+        left: 10px;
+        transition-delay: 0.1s;
+        transform: translate3d(0px, 0px, 0px);
+    }
+}
+
+#mb3 {
+
+    &.mnorm {
+        top: 34px;
+        left: 10px;
+        transition-delay: 0.2s;
+        transform: translate3d(0px, 0px, 0px);
+    }
+}
+/*______________________________________________________________________________*/
+
+#m_button:hover {
+
+    #mb1 {
+        &.mnorm {
+            top: 10px;
+            transform: translate3d(0px, 12px, 0px);
+            transition-delay: 0s;
+        }
+        &.mact {
+            top: 10px;
+            left: 10px;
+            transform: translate3d(0px, 11.25px, 0px);
+            transition-delay: 0.2s;
+
+            &:after {
+                transform: rotate(45deg) scaleX(2.55);
+                transition-delay: 0.2s;
+            }
+        }
+    }
+    
+    #mb2 {
+        &.mnorm {
+            top: 22px;
+            transform: rotate(90deg) translate3d(-12px, -16.5px, 0px);
+            transition-delay: 0.1s;
+        }
+        &.mact {
+            top: 22px;
+            left: 10px;
+            transform: translate3d(0px, 0px, 0px);
+            transition-delay: 0.1s;
+        }
+    }
+
+    #mb3 {
+        &.mnorm {
+            top: 34px;
+            transform: translate3d(50px, 0px, 0px);
+            transition-delay: 0s;
+        }
+        &.mact {
+            top: 34px;
+            left: 10px;
+            transform: translate3d(-2.75px, -10px, 0px);
+            transition-delay: 0.2s;
+            &:after {
+                transform: rotate(-45deg) scaleX(2.55);
+                transform-origin: 0% 0%;
+                transition-delay: 0.2s;
+            }
+        }
+    }
+}

@@ -1,0 +1,24 @@
+//- mixin sectionContent for creating a content block on a page
+mixin sectionContentDouble(headline, sub)
+	section(id!=attributes.id, class="s_double_w")
+		.cont_block
+			.h_block
+				h1= headline
+			h2= sub
+		//- Should be cont_block, research on this
+		.cont_p
+			if block
+				block
+			else
+				p No content provided
+mixin sectionContent(headline, sub)
+	section(id!=attributes.id)
+		.cont_block
+			.h_block
+				h1= headline
+			h2= sub
+		.cont_block
+			if block
+				block
+			else
+				p No content provided

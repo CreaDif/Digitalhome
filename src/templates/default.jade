@@ -1,0 +1,26 @@
+//- # default template
+//- #####################################################################
+//- # uses following modules
+//- # - menu
+//- # - footer
+//- # provides the following variables
+//- # - styles, which can be used to import custom stylesheets
+//- # - title, provides a default title when nothing is defined
+//- # - content, actual content of this page
+//- # - scripts, which can be used to load scripts at the end of the page
+//- #####################################################################
+
+doctype html
+html(lang="de")
+    head
+        block styles
+            link(rel="stylesheet", href="./col1.css")
+        block title
+            title DigitalHome - Ihr Haus in Ihrer Hand
+    body
+        include ../modules/menu
+        .table
+            block content
+            include ../modules/footer
+        block scripts
+            script(src="./scripts/scripts.js")
