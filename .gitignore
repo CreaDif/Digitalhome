@@ -4,6 +4,7 @@
 css/
 images/
 scripts/
+node_modules/
 
 # Visual Studio
 # =========================
