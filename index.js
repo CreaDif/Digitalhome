@@ -46,6 +46,14 @@ function currentXPosition() {
     return 0;
 }
 
+//ScLPos = ScrollLeftPosition
+//bug warning: if(0) will not be fired -> check variable + check (variable value == 0)
+function setScLPos(pos) {
+    if (document.documentElement.scrollLeft || document.documentElement.scrollLeft == 0)
+        document.documentElement.scrollLeft = pos;
+    if (document.body.scrollLeft || document.body.scrollLeft == 0)
+        document.body.scrollLeft = pos;
+}
 
 
 var scroll_correct = false;
@@ -66,11 +74,10 @@ window.onscroll = function (event) {
     scrollex();
 };
 
+//horizontal scroll translation
 
-
-window.addEventListener("mousewheel", MouseWheelHandler, false);
-window.addEventListener("DOMMouseScroll", MouseWheelHandler, false);
-
+//window.addEventListener("mousewheel", MouseWheelHandler, false);
+//window.addEventListener("DOMMouseScroll", MouseWheelHandler, false);
 
 var lastScrollLeft = document.documentElement.scrollLeft;
 var lastScrollTop = document.documentElement.scrollTop;
@@ -79,49 +86,49 @@ function MouseWheelHandler(e) {
     var e = window.event || e;
     var delta = e.wheelDelta || -e.detail;
     //check if scrolled horizontaly or verticaly
-    var deltaScLeft = document.documentElement.scrollLeft - lastScrollLeft;
-    var deltaScTop = document.documentElement.scrollTop - lastScrollTop;
-    var scrolledXdir = false;
-    var scrolledYdir = false;
-    if (Math.abs(deltaScLeft) > Math.abs(deltaScTop)) {
-        scrolledXdir = true;
-        console.log(delta);
-        lastScrollLeft = deltaScLeft;
-    } else {
-        scrolledXdir = false;
-        console.log("ver");
-    }
-    if (scrolledXdir == false) {
+    //var deltaScLeft = document.documentElement.scrollLeft - lastScrollLeft;
+    //var deltaScTop = document.documentElement.scrollTop - lastScrollTop;
+    //var scrolledXdir = false;
+    //var scrolledYdir = false;
+    //if (Math.abs(deltaScLeft) > Math.abs(deltaScTop)) {
+    //    scrolledXdir = true;
+    //    console.log(delta);
+    //    lastScrollLeft = deltaScLeft;
+    //} else {
+    //    scrolledXdir = false;
+    //    console.log("ver");
+    //}
+    //if (scrolledXdir == false) {
         startX = null;
-        startY = document.documentElement.scrollLeft;
+        startY = currentXPosition();
         dest = startY + delta * document.documentElement.clientWidth * 0.4;
         scAnimate();
-    }
+    //}
 }
 
 
 
 //Button Click scroll
 var start = null;
-var from = document.documentElement.scrollLeft;
+var from = currentXPosition();
 var dest = 0;
 var last = 0;
 var duration = 1000;
-var reqID;
+var reqID = null;
 
 window.onkeydown = function (e) {
     if (e.keyCode == 37 || e.keyCode == 38) {
-        e.preventDefault();
         startX = null;
-        startY = document.documentElement.scrollLeft;
+        startY = currentXPosition();
         dest = startY - document.documentElement.clientWidth * 0.4;
         scAnimate();
-    } else if (e.keyCode == 39 || e.keyCode == 40) {
         e.preventDefault();
+    } else if (e.keyCode == 39 || e.keyCode == 40) {
         startX = null;
-        startY = document.documentElement.scrollLeft;
+        startY = currentXPosition();
         dest = startY + document.documentElement.clientWidth * 0.4;
         scAnimate();
+        e.preventDefault();
     }
 }
 
@@ -130,7 +137,7 @@ window.onkeydown = function (e) {
 document.getElementById("s_button").onclick = function () {
     //set Animation parameters
     startX = null;
-    startY = document.documentElement.scrollLeft;
+    startY = currentXPosition();
     dest = startY + document.documentElement.clientWidth * 0.4;
     //call animation
     scAnimate();
@@ -153,7 +160,7 @@ function scStep(timestamp) {
     var passed = timestamp - startX;
     var progress = passed / duration;
     var value = startY + ((dest - startY) * delta(progress));
-    document.documentElement.scrollLeft = value;
+    setScLPos(value);
     if (progress < 1){reqID = requestAnimationFrame(scStep);}
-    if (progress >= 1){startX = null;from = document.documentElement.scrollLeft;}
+    if (progress >= 1) { startX = null; from = currentXPosition(); }
 }
