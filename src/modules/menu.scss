@@ -159,6 +159,15 @@ nav {
             transition-delay: 0.2s;
             transform: translate3d(0px, 0px, 0px);
         }
+        &.mact {
+            top: 10px;
+            left: 10px;
+            transition-delay: 0.2s;
+            transform: translate3d(3px, 0px, 0px);
+            &:after {
+                transform: rotate(45deg) scaleX(3.7);
+            }
+        }
     }
 }
 
@@ -170,6 +179,12 @@ nav {
             transition-delay: 0.1s;
             transform: translate3d(0px, 0px, 0px);
         }
+        &.mact {
+            top: 22px;
+            left: 10px;
+            transform: translate3d(50px, 0px, 0px);
+            transition-delay: 0.1s;
+        }
     }
 }
 
@@ -180,6 +195,16 @@ nav {
             left: 10px;
             transition-delay: 0.2s;
             transform: translate3d(0px, 0px, 0px);
+        }
+        &.mact {
+            top: 34px;
+            left: 10px;
+            transform: translate3d(3px, 1px, 0px);
+            transition-delay: 0.2s;
+            &:after {
+                transform-origin: 0% 100%;
+                transform: rotate(-45deg) scaleX(3.7);
+            }
         }
     }
 }
