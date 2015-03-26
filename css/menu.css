@@ -3,11 +3,11 @@
     position: absolute;
     left: 0px;
     top: 0px;
-    -webkit-transform: rotate(0deg) translate(10px, 10px);
-    -moz-transform: rotate(0deg) translate(10px, 10px);
-    -o-transform: rotate(0deg) translate(10px, 10px);
-    -ms-transform: rotate(0deg) translate(10px, 10px);
-    transform: rotate(0deg) translate(10px, 10px);
+    -webkit-transform: rotate(0deg) translate3d(10px, 10px, 0px);
+    -moz-transform: rotate(0deg) translate3d(10px, 10px, 0px);
+    -o-transform: rotate(0deg) translate3d(10px, 10px, 0px);
+    -ms-transform: rotate(0deg) translate3d(10px, 10px, 0px);
+    transform: rotate(0deg) translate3d(10px, 10px, 0px);
 }
 
 #sb2 {
@@ -15,11 +15,11 @@
     top: 0px;
     left: 0px;
     z-index: 1;
-    -webkit-transform: rotate(0deg) translate(30px, 30px);
-    -moz-transform: rotate(0deg) translate(30px, 30px);
-    -o-transform: rotate(0deg) translate(30px, 30px);
-    -ms-transform: rotate(0deg) translate(30px, 30px);
-    transform: rotate(0deg) translate(30px, 30px);
+    -webkit-transform: rotate(0deg) translate3d(30px, 30px, 0px);
+    -moz-transform: rotate(0deg) translate3d(30px, 30px, 0px);
+    -o-transform: rotate(0deg) translate3d(30px, 30px, 0px);
+    -ms-transform: rotate(0deg) translate3d(30px, 30px, 0px);
+    transform: rotate(0deg) translate3d(30px, 30px, 0px);
 }
 
 #sb1:after {
@@ -51,11 +51,11 @@
     height: 4px;
     width: 15px;
     z-index: 1;
-    -webkit-transform: rotate(45deg) translate(0px, -3px);
-    -moz-transform: rotate(45deg) translate(0px, -3px);
-    -o-transform: rotate(45deg) translate(0px, -3px);
-    -ms-transform: rotate(45deg) translate(0px, -3px);
-    transform: rotate(45deg) translate(0px, -3px);
+    -webkit-transform: rotate(45deg) translate3d(0px, -3px, 0px);
+    -moz-transform: rotate(45deg) translate3d(0px, -3px, 0px);
+    -o-transform: rotate(45deg) translate3d(0px, -3px, 0px);
+    -ms-transform: rotate(45deg) translate3d(0px, -3px, 0px);
+    transform: rotate(45deg) translate3d(0px, -3px, 0px);
 }
 
 #sb3, #sb4 {
@@ -72,29 +72,29 @@
 }
 
 #sb3 {
-    -webkit-transform: rotate(45deg) translate(-30px, 0px);
-    -moz-transform: rotate(45deg) translate(-30px, 0px);
-    -o-transform: rotate(45deg) translate(3px, 0px);
-    -ms-transform: rotate(45deg) translate(3px, 0px);
-    transform: rotate(45deg) translate(-50px, 0px);
+    -webkit-transform: rotate(45deg) translate3d(-30px, 0px, 0px);
+    -moz-transform: rotate(45deg) translate3d(-30px, 0px, 0px);
+    -o-transform: rotate(45deg) translate3d(3px, 0px, 0px);
+    -ms-transform: rotate(45deg) translate3d(3px, 0px, 0px);
+    transform: rotate(45deg) translate3d(-50px, 0px, 0px);
 }
 
 #sb4 {
-    -webkit-transform: rotate(-45deg) translate(3px, 0px);
-    -moz-transform: rotate(-45deg) translate(3px, 0px);
-    -o-transform: rotate(-45deg) translate(3px, 0px);
-    -ms-transform: rotate(-45deg) translate(3px, 0px);
-    transform: rotate(-45deg) translate(-50px, 0px);
+    -webkit-transform: rotate(-45deg) translate3d(3px, 0px, 0px);
+    -moz-transform: rotate(-45deg) translate3d(3px, 0px, 0px);
+    -o-transform: rotate(-45deg) translate3d(3px, 0px, 0px);
+    -ms-transform: rotate(-45deg) translate3d(3px, 0px, 0px);
+    transform: rotate(-45deg) translate3d(-50px, 0px, 0px);
 }
 /*______________________________________________________________________________*/
 
 #s_button:hover #sb1:after {
     border-radius: 100px;
-    -webkit-transform: rotate(45deg) translate(-60px, 0px);
-    -moz-transform: rotate(45deg) translate(-60px, 0px);
-    -o-transform: rotate(45deg) translate(-60px, 0px);
-    -ms-transform: rotate(45deg) translate(-60px, 0px);
-    transform: rotate(45deg) translate(-60px, 0px);
+    -webkit-transform: rotate(45deg) translate3d(-60px, 0px, 0px);
+    -moz-transform: rotate(45deg) translate3d(-60px, 0px, 0px);
+    -o-transform: rotate(45deg) translate3d(-60px, 0px, 0px);
+    -ms-transform: rotate(45deg) translate3d(-60px, 0px, 0px);
+    transform: rotate(45deg) translate3d(-60px, 0px, 0px);
 }
 
 #s_button:hover #sb1:after {
@@ -103,11 +103,11 @@
 }
 
 #s_button:hover #sb2 {
-    -webkit-transform: rotate(0deg) translate(10px, 22px);
-    -moz-transform: rotate(0deg) translate(10px, 22px);
-    -o-transform: rotate(0deg) translate(10px, 22px);
-    -ms-transform: rotate(0deg) translate(10px, 22px);
-    transform: rotate(0deg) translate(10px, 22px);
+    -webkit-transform: rotate(0deg) translate3d(10px, 22px, 0px);
+    -moz-transform: rotate(0deg) translate3d(10px, 22px, 0px);
+    -o-transform: rotate(0deg) translate3d(10px, 22px, 0px);
+    -ms-transform: rotate(0deg) translate3d(10px, 22px, 0px);
+    transform: rotate(0deg) translate3d(10px, 22px, 0px);
 }
 
     #s_button:hover #sb2:after {
@@ -119,19 +119,19 @@
     }
 
 #s_button:hover #sb3 {
-    -webkit-transform: rotate(45deg) translate(1.75px, -0.25px);
-    -moz-transform: rotate(45deg) translate(1.75px, -0.25px);
-    -o-transform: rotate(45deg) translate(1.75px, -0.25px);
-    -ms-transform: rotate(45deg) translate(1.75px, -0.25px);
-    transform: rotate(45deg) translate(1.75px, -0.25px);
+    -webkit-transform: rotate(45deg) translate3d(1.75px, -0.25px, 0px);
+    -moz-transform: rotate(45deg) translate3d(1.75px, -0.25px, 0px);
+    -o-transform: rotate(45deg) translate3d(1.75px, -0.25px, 0px);
+    -ms-transform: rotate(45deg) translate3d(1.75px, -0.25px, 0px);
+    transform: rotate(45deg) translate3d(1.75px, -0.25px, 0px);
 }
 
 #s_button:hover #sb4 {
-    -webkit-transform: rotate(-45deg) translate(2.25px, -0.25px);
-    -moz-transform: rotate(-45deg) translate(2.25px, -0.25px);
-    -o-transform: rotate(-45deg) translate(2.25px, -0.25px);
-    -ms-transform: rotate(-45deg) translate(2.25px, -0.25px);
-    transform: rotate(-45deg) translate(2.25px, -0.25px);
+    -webkit-transform: rotate(-45deg) translate3d(2.25px, -0.25px, 0px);
+    -moz-transform: rotate(-45deg) translate3d(2.25px, -0.25px, 0px);
+    -o-transform: rotate(-45deg) translate3d(2.25px, -0.25px, 0px);
+    -ms-transform: rotate(-45deg) translate3d(2.25px, -0.25px, 0px);
+    transform: rotate(-45deg) translate3d(2.25px, -0.25px, 0px);
 }
 /*______________________________________________________________________________*/
 /*______________________________________________________________________________*/

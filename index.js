@@ -65,3 +65,95 @@ function scrollex() {
 window.onscroll = function (event) {
     scrollex();
 };
+
+
+
+window.addEventListener("mousewheel", MouseWheelHandler, false);
+window.addEventListener("DOMMouseScroll", MouseWheelHandler, false);
+
+
+var lastScrollLeft = document.documentElement.scrollLeft;
+var lastScrollTop = document.documentElement.scrollTop;
+
+function MouseWheelHandler(e) {
+    var e = window.event || e;
+    var delta = e.wheelDelta || -e.detail;
+    //check if scrolled horizontaly or verticaly
+    var deltaScLeft = document.documentElement.scrollLeft - lastScrollLeft;
+    var deltaScTop = document.documentElement.scrollTop - lastScrollTop;
+    var scrolledXdir = false;
+    var scrolledYdir = false;
+    if (Math.abs(deltaScLeft) > Math.abs(deltaScTop)) {
+        scrolledXdir = true;
+        console.log(delta);
+        lastScrollLeft = deltaScLeft;
+    } else {
+        scrolledXdir = false;
+        console.log("ver");
+    }
+    if (scrolledXdir == false) {
+        startX = null;
+        startY = document.documentElement.scrollLeft;
+        dest = startY + delta * document.documentElement.clientWidth * 0.4;
+        scAnimate();
+    }
+}
+
+
+
+//Button Click scroll
+var start = null;
+var from = document.documentElement.scrollLeft;
+var dest = 0;
+var last = 0;
+var duration = 1000;
+var reqID;
+
+window.onkeydown = function (e) {
+    if (e.keyCode == 37 || e.keyCode == 38) {
+        e.preventDefault();
+        startX = null;
+        startY = document.documentElement.scrollLeft;
+        dest = startY - document.documentElement.clientWidth * 0.4;
+        scAnimate();
+    } else if (e.keyCode == 39 || e.keyCode == 40) {
+        e.preventDefault();
+        startX = null;
+        startY = document.documentElement.scrollLeft;
+        dest = startY + document.documentElement.clientWidth * 0.4;
+        scAnimate();
+    }
+}
+
+
+
+document.getElementById("s_button").onclick = function () {
+    //set Animation parameters
+    startX = null;
+    startY = document.documentElement.scrollLeft;
+    dest = startY + document.documentElement.clientWidth * 0.4;
+    //call animation
+    scAnimate();
+};
+
+function scAnimate() {
+    if (reqID) {
+        //cancel ongoing animation
+        cancelAnimationFrame(reqID);
+    }
+    reqID = requestAnimationFrame(scStep);
+}
+
+function delta(prog) {
+    return 1 - Math.pow(1 - prog, 3);
+}
+
+function scStep(timestamp) {
+    if (startX == null){startX = timestamp;}
+    var passed = timestamp - startX;
+    var progress = passed / duration;
+    var value = startY + ((dest - startY) * delta(progress));
+    document.documentElement.scrollLeft = value;
+    if (progress < 1){reqID = requestAnimationFrame(scStep);}
+    if (progress >= 1){startX = null;from = document.documentElement.scrollLeft;}
+}
