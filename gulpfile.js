@@ -17,11 +17,6 @@ var jade = require('gulp-jade');
 var minifyHtml = require('gulp-minify-html');
 var minifyCSS = require('gulp-minify-css');
  
-gulp.task('shrinkwrap', function() {
-	gulp.src('package.json')
-		
-});
-
 // JS hint task
 gulp.task('jshint', function() {
   	gulp.src(['./src/scripts/*.js', '!**/jquery.js', '!**/jquery-easing.js'])
@@ -72,14 +67,43 @@ gulp.task('jade', function() {
 
 // Minify HTML
 gulp.task('minify-html', function() {
-	gulp.src('./')
+	gulp.src('./*.html')
 		.pipe(minifyHtml())
 		.pipe(gulp.dest('./'));
 });
 
 // Minify css
 gulp.task('minify-css', function() {
-	gulp.src('./css')
+	gulp.src('./css/*.css')
 		.pipe(minifyCSS())
 		.pipe(gulp.dest('./css'));
 })
+
+// Build task
+gulp.task('build', ['sass', 'jade', 'imagemin', 'scripts'], function() {});
+
+// Build production state
+gulp.task('productive', ['build', 'minify-css', 'minify-html'], function() {});
+
+// Watch task for automated building
+gulp.task('watch', 'build', function() {
+	// watch for jade changes
+	gulp.watch(['./src/*.jade', './src/**/*.jade'], function() {
+		gulp.run('jade');
+	});
+
+	// watch for sass changes
+	gulp.watch(['./src/*.scss', './src/**/*.scss'], function() {
+		gulp.run('sass');
+	});
+
+	// watch for image changes
+	gulp.watch('./src/scripts/*.js', function() {
+		gulp.run('scripts');
+	});
+
+	// watch for image changes
+	gulp.watch('./src/images/**/*', function() {
+		gulp.run('imagemin');
+	});
+});
