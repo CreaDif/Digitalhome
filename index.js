@@ -54,7 +54,7 @@ function setScLPos(pos) {
 }
 
 
-var scroll_correct = false;
+
 function prllx() {
     var curr_x = getScLPos();
     var speed = 0.5;
@@ -62,15 +62,15 @@ function prllx() {
     p1_img.style.left = curr_x * speed + 50 + "px";
     scroll_correct = false;
 };
+
+var scroll_correct = false;
 function scrollex() {
     if (scroll_correct == false) {
         scroll_correct = true;
         requestAnimationFrame(prllx);
     }
 }
-window.onscroll = function (event) {
-    scrollex();
-};
+window.onscroll = scrollex;
 
 //horizontal scroll translation
 window.addEventListener("wheel", mousewheel, false);          //non FF
@@ -90,10 +90,12 @@ function mousewheel(e) {
         scAnimate();
     } else if (e.wheelDelta) {
         //IE
+        cancelAnim();
         var delta = e.wheelDelta/40;
         setScLPos(getScLPos() - delta * 20);
     } else {
         //Others
+        cancelAnim();
         var delta = -e.detail;
         setScLPos(getScLPos() - delta * 20);
     }
@@ -105,12 +107,14 @@ window.onkeydown = function (e) {
         startX = null;
         startY = getScLPos();
         dest = startY - document.documentElement.clientWidth * 0.4;
+        duration = 1000;
         scAnimate();
         e.preventDefault();
     } else if (e.keyCode == 39 || e.keyCode == 40) {
         startX = null;
         startY = getScLPos();
         dest = startY + document.documentElement.clientWidth * 0.4;
+        duration = 1000;
         scAnimate();
         e.preventDefault();
     }
@@ -118,12 +122,11 @@ window.onkeydown = function (e) {
 
 
 //Animation CORE
-var start = null;
-var from = getScLPos();
+var startX = null;
+var startY = getScLPos();
 var dest = 0;
-var last = 0;
 var duration = 1000;
-var reqID = null;
+var reqID = 0;
 
 
 document.getElementById("s_button").onclick = function () {
@@ -131,17 +134,21 @@ document.getElementById("s_button").onclick = function () {
     startX = null;
     startY = getScLPos();
     dest = startY + document.documentElement.clientWidth * 0.4;
+    duration = 1000;
     //call animation
     scAnimate();
 };
 
-function scAnimate() {
+function cancelAnim() {
     if (reqID) {
         //cancel ongoing animation
         cancelAnimationFrame(reqID);
         reqID = 0;
     }
-        reqID = requestAnimationFrame(scStep);
+}
+function scAnimate() {
+    cancelAnim();
+    reqID = requestAnimationFrame(scStep);
     
 }
 
@@ -157,5 +164,5 @@ function scStep(timestamp) {
     var value = startY + ((dest - startY) * delta(progress));
     setScLPos(value);
     if (progress < 1){reqID = requestAnimationFrame(scStep);}
-    if (progress >= 1) { startX = null; from = getScLPos(); }
+    if (progress >= 1) { startX = null; startY = getScLPos(); }
 }
