@@ -36,14 +36,12 @@
 //parallax scrolling
 
 
-function currentXPosition() {
+function getScLPos() {
     if (self.pageXOffset) return self.pageXOffset;
-
     if (document.documentElement && document.documentElement.scrollLeft)
-        return document.documentElement.scrollLeft;
-
+        return document.documentElement.scrollLeft; 
     if (document.body.scrollLeft) return document.body.scrollLeft;
-    return 0;
+        return 0; 
 }
 
 //ScLPos = ScrollLeftPosition
@@ -58,7 +56,7 @@ function setScLPos(pos) {
 
 var scroll_correct = false;
 function prllx() {
-    var curr_x = currentXPosition();
+    var curr_x = getScLPos();
     var speed = 0.5;
     var p1_img = document.getElementById("p1_bg_img");
     p1_img.style.left = curr_x * speed + 50 + "px";
@@ -75,57 +73,43 @@ window.onscroll = function (event) {
 };
 
 //horizontal scroll translation
+window.addEventListener("wheel", mousewheel, false);          //non FF
+window.addEventListener("DOMMouseScroll", mousewheel, false); //FF
+window.onmousewheel = mousewheel;
 
-//window.addEventListener("mousewheel", MouseWheelHandler, false);
-//window.addEventListener("DOMMouseScroll", MouseWheelHandler, false);
-
-var lastScrollLeft = document.documentElement.scrollLeft;
-var lastScrollTop = document.documentElement.scrollTop;
-
-function MouseWheelHandler(e) {
+function mousewheel(e) {
     var e = window.event || e;
-    var delta = e.wheelDelta || -e.detail;
-    //check if scrolled horizontaly or verticaly
-    //var deltaScLeft = document.documentElement.scrollLeft - lastScrollLeft;
-    //var deltaScTop = document.documentElement.scrollTop - lastScrollTop;
-    //var scrolledXdir = false;
-    //var scrolledYdir = false;
-    //if (Math.abs(deltaScLeft) > Math.abs(deltaScTop)) {
-    //    scrolledXdir = true;
-    //    console.log(delta);
-    //    lastScrollLeft = deltaScLeft;
-    //} else {
-    //    scrolledXdir = false;
-    //    console.log("ver");
-    //}
-    //if (scrolledXdir == false) {
+    var delta = e.wheelDeltaY / 40 || -e.detail;
+    if (e.wheelDeltaY) {
+        //Webkit
+        var delta = e.wheelDeltaY / 40;
         startX = null;
-        startY = currentXPosition();
-        dest = startY + delta * document.documentElement.clientWidth * 0.4;
+        startY = getScLPos();
+        dest = startY - delta * document.documentElement.clientWidth * 0.13;
+        duration = 500;
         scAnimate();
-    //}
+    } else if (e.wheelDelta) {
+        //IE
+        var delta = e.wheelDelta/40;
+        setScLPos(getScLPos() - delta * 20);
+    } else {
+        //Others
+        var delta = -e.detail;
+        setScLPos(getScLPos() - delta * 20);
+    }
 }
 
-
-
-//Button Click scroll
-var start = null;
-var from = currentXPosition();
-var dest = 0;
-var last = 0;
-var duration = 1000;
-var reqID = null;
-
+//Arrow Navigation
 window.onkeydown = function (e) {
     if (e.keyCode == 37 || e.keyCode == 38) {
         startX = null;
-        startY = currentXPosition();
+        startY = getScLPos();
         dest = startY - document.documentElement.clientWidth * 0.4;
         scAnimate();
         e.preventDefault();
     } else if (e.keyCode == 39 || e.keyCode == 40) {
         startX = null;
-        startY = currentXPosition();
+        startY = getScLPos();
         dest = startY + document.documentElement.clientWidth * 0.4;
         scAnimate();
         e.preventDefault();
@@ -133,11 +117,19 @@ window.onkeydown = function (e) {
 }
 
 
+//Animation CORE
+var start = null;
+var from = getScLPos();
+var dest = 0;
+var last = 0;
+var duration = 1000;
+var reqID = null;
+
 
 document.getElementById("s_button").onclick = function () {
     //set Animation parameters
     startX = null;
-    startY = currentXPosition();
+    startY = getScLPos();
     dest = startY + document.documentElement.clientWidth * 0.4;
     //call animation
     scAnimate();
@@ -147,8 +139,10 @@ function scAnimate() {
     if (reqID) {
         //cancel ongoing animation
         cancelAnimationFrame(reqID);
+        reqID = 0;
     }
-    reqID = requestAnimationFrame(scStep);
+        reqID = requestAnimationFrame(scStep);
+    
 }
 
 function delta(prog) {
@@ -156,11 +150,12 @@ function delta(prog) {
 }
 
 function scStep(timestamp) {
-    if (startX == null){startX = timestamp;}
+    if (startX == null)
+        startX = timestamp;
     var passed = timestamp - startX;
     var progress = passed / duration;
     var value = startY + ((dest - startY) * delta(progress));
     setScLPos(value);
     if (progress < 1){reqID = requestAnimationFrame(scStep);}
-    if (progress >= 1) { startX = null; from = currentXPosition(); }
+    if (progress >= 1) { startX = null; from = getScLPos(); }
 }

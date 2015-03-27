@@ -111,7 +111,7 @@ canvas {
     overflow: hidden;
 }
 
-.cont_block, .cont_p {
+.cont_block, .cont_p, .cont_t {
     padding: 1vw;
     display: inline-block;
     max-height: 80vh;
@@ -127,7 +127,7 @@ canvas {
     font-size: 0rem;
     vertical-align: middle;
     -webkit-columns: 4;
-    -moz-columns: 4;
+    -moz-columns: 4; 
     columns: 4;
     -webkit-column-span: all;
     column-span: all;
@@ -136,6 +136,13 @@ canvas {
     column-gap: 1em;
     -moz-column-fill: balance;
     column-fill: balance;
+}
+.cont_t {
+    width: 296vh;
+    padding: 0px;
+    font-size: 0rem;
+    z-index: 2;
+    position: relative;
 }
 
     .cont_block p, .cont_p p {
@@ -148,7 +155,7 @@ canvas {
         margin-right: auto;
     }
 
-    .cont_p a.a_table, .cont_block a {
+    a.a_table, .cont_block a {
         display: inline-block;
         width: 100%;
         height: 100%;
@@ -159,7 +166,7 @@ canvas {
         transition-delay: 0.1s;
     }
 
-        .cont_p a.a_table:hover, .cont_block a:hover, .igc.igl a:hover {
+        a.a_table:hover, .cont_block a:hover, .igc.igl a:hover {
             -webkit-transition-delay: 0.1s;
             transition-delay: 0.1s;
         }
@@ -167,7 +174,7 @@ canvas {
         /*
             Link arrow in Tiles and content links. Don't delete.
             */
-        .cont_p a.a_table:before, .cont_block a:before, .igc.igl a:before, .igc.igi div.igd:before {
+        a.a_table:before, .cont_block a:before, .igc.igl a:before, .igc.igi div.igd:before {
             display: inline-block;
             position: relative;
             top: -1px;
@@ -189,7 +196,7 @@ canvas {
         }
 
 
-        .cont_p a.a_table:hover:before, .cont_block a:hover:before, .igc.igl a:hover:before, .igc.igi:hover div.igd:before {
+        a.a_table:hover:before, .cont_block a:hover:before, .igc.igl a:hover:before, .igc.igi:hover div.igd:before {
             margin-right: 10px;
             -webkit-transition-delay: 0.1s;
             transition-delay: 0.1s;
