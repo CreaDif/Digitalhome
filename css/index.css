@@ -23,7 +23,7 @@
     /*
     Global transition style. Individual transition are declared in regarding class declaration.
     */
-a, a:hover, a:before, a:hover:before, a:after, a:hover:after, .igc img, .igd, .igd:before {
+a, a:hover, a:before, a:hover:before, a:after, a:hover:after, .tile img, .t_txt, .t_txt:before {
     -webkit-transition: all 0.25s ease;
     -moz-transition: all 0.25s ease;
     -o-transition: all 0.25s ease;

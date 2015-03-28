@@ -166,7 +166,7 @@ canvas {
         transition-delay: 0.1s;
     }
 
-        a.a_table:hover, .cont_block a:hover, .igc.igl a:hover {
+        a.a_table:hover, .cont_block a:hover {
             -webkit-transition-delay: 0.1s;
             transition-delay: 0.1s;
         }
@@ -174,7 +174,7 @@ canvas {
         /*
             Link arrow in Tiles and content links. Don't delete.
             */
-        a.a_table:before, .cont_block a:before, .igc.igl a:before, .igc.igi div.igd:before {
+        a.a_table:before, .cont_block a:before, .tile .t_txt:before {
             display: inline-block;
             position: relative;
             top: -1px;
@@ -196,7 +196,7 @@ canvas {
         }
 
 
-        a.a_table:hover:before, .cont_block a:hover:before, .igc.igl a:hover:before, .igc.igi:hover div.igd:before {
+        a.a_table:hover:before, .cont_block a:hover:before, .tile:hover .t_txt:before {
             margin-right: 10px;
             -webkit-transition-delay: 0.1s;
             transition-delay: 0.1s;

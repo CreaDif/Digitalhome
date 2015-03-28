@@ -25,7 +25,7 @@
     }
 
     //canvas
-    //geschrieben von der DigitalHome Gruppe
+    //written by Digital Home
 
     var colt = '#000000';
     var colb = '#000000';
@@ -50,7 +50,7 @@
     window.onresize = ud_dim;
 
     function ud_dim() {
-        //update dimensions -> Bildschirmmaße für Canvas updaten
+        //update screen dimensions
         width = document.documentElement.clientWidth;
         height = document.documentElement.clientHeight;
         s.setAttribute("style", "width:" + width + "px;height:" + height + "px");
@@ -118,13 +118,10 @@
             maxt = [0, 0, 0];
             maxb = [0, 0, 0];
         } else {
-            //random shit -> dieser Fall wird nie eintreten
+            //random shit -> this case will never happen
         }
        
-        
-
-        //var debugr = time;
-        //var debugl = time;
+       
         for (var i = 0; i < 3; i++) {
             var mt = (maxt[i] - mint[i]) / ((etim - stim));
             var mb = (maxb[i] - minb[i]) / ((etim - stim));
@@ -141,10 +138,7 @@
             colt += ('0' + (rgbt[i] | 0).toString(16)).substr(-2);
             colb += ('0' + (rgbb[i] | 0).toString(16)).substr(-2);
             
-            //debugl += " | " + mt + " | " + colt;
-            //debugr += " | " + mb + " | " + (rgbb[i] | 0) + " | " + colb;
         }
-        //console.log(debugr);
         updateCanvas();
         
     }
@@ -152,7 +146,6 @@
 
     requestAnimationFrame(daytime);
     var iv = setInterval(function () {
-        //rekursiver Aufruf der requestAnimationFrame Methode, um stabile 60fps zu gewährleisten
         requestAnimationFrame(daytime);
     }, 100);
 

@@ -79,7 +79,7 @@ window.onmousewheel = mousewheel;
 
 function mousewheel(e) {
     var e = window.event || e;
-    var delta = e.wheelDeltaY / 40 || -e.detail;
+    //var delta = e.wheelDeltaY / 40 || -e.detail;
     if (e.wheelDeltaY) {
         //Webkit
         var delta = e.wheelDeltaY / 40;
@@ -91,13 +91,13 @@ function mousewheel(e) {
     } else if (e.wheelDelta) {
         //IE
         cancelAnim();
-        var delta = e.wheelDelta/40;
-        setScLPos(getScLPos() - delta * 20);
+        var delta = e.wheelDelta / 40;
+        requestAnimationFrame(setScLPos(getScLPos() - delta * 20));
     } else {
         //Others
         cancelAnim();
         var delta = -e.detail;
-        setScLPos(getScLPos() - delta * 20);
+        requestAnimationFrame(setScLPos(getScLPos() - delta * 20));
     }
 }
 
