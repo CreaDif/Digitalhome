@@ -64,13 +64,18 @@ canvas {
     bottom: 0%;
     left: 0%;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     z-index: 5;
     background-image: url("../bilder/sky1.png");
     background-repeat: repeat-x;
     background-attachment: scroll;
     background-position: bottom left;
     background-size: auto 200px;
+    -webkit-transform: translate3d(0px, 0px, 0px);
+        -moz-transform: translate3d(0px, 0px, 0px);
+        -o-transform: translate3d(0px, 0px, 0px);
+        -ms-transform: translate3d(0px, 0px, 0px);
+        transform: translate3d(0px, 0px, 0px);
 }
 
 #skyline2 {
@@ -110,7 +115,7 @@ canvas {
     left: 10vw;
     width: 30vw;
     top: 20vh;
-    height: 20vh;
+    height: 30vh;
     background-color: rgba(0,0,0,0.5);
     }
 /*

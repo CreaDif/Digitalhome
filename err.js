@@ -23,7 +23,7 @@
     var maxb = [0, 0, 0];
     var stim = 0;
     var etim = 0;
-    var time = 200;
+    var time = 50;
     var tswitch = 1;
 
 
@@ -43,7 +43,7 @@
    
 
     function daytime() {
-        dayLength = 960;
+        dayLength = 240;
         time = (time + 1) % dayLength;
         colt = '#';
         colb = '#';
@@ -153,9 +153,9 @@ var sky4 = document.getElementById("skyline4");
 function prllx2() {
     var curr_x = getScLPos();
 
-    sky1.style.left = curr_x * 0.2 + "px";
+    sky1.style.left = curr_x * 0.25 + "px";
     sky2.style.left = curr_x * 0.5 + "px";
-    sky3.style.left = curr_x * 0.8 + "px";
+    sky3.style.left = curr_x * 0.75 + "px";
     sky4.style.left = curr_x * 0.9 + "px";
     scroll_correct = false;
 };
