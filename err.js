@@ -1,28 +1,12 @@
 ﻿window.onload = function () {
 
-    var tog_menu = 1;
+
     tog_m();
-    var tog_search = 0;
+
     var width = document.documentElement.clientWidth + 1;
     var height = document.documentElement.clientHeight + 1;
-    var mb = document.getElementById("m_button");
-    mb.addEventListener("click", tog_m);
 
-    function tog_m() {
-        if (tog_menu == 0) {
-            document.getElementById("navi").className = "active";
-            document.getElementById("mb1").className = "mact";
-            document.getElementById("mb2").className = "mact";
-            document.getElementById("mb3").className = "mact";
-            tog_menu = 1;
-        } else {
-            document.getElementById("navi").className = "idle";
-            document.getElementById("mb1").className = "mnorm";
-            document.getElementById("mb2").className = "mnorm";
-            document.getElementById("mb3").className = "mnorm";
-            tog_menu = 0;
-        }
-    }
+
 
     //canvas
     //written by Digital Home
@@ -46,18 +30,13 @@
     var s = document.getElementById("sunset");
     var ctx;
     ud_dim();
-
     window.onresize = ud_dim;
-
     function ud_dim() {
-        //update screen dimensions
+        //update dimensions
         width = document.documentElement.clientWidth;
         height = document.documentElement.clientHeight;
         s.setAttribute("style", "width:" + width + "px;height:" + height + "px");
-        s.style.width = "1";
-        s.style.height = "" + height;
         ctx = s.getContext("2d");
-        ctx.scale(width/5, 21);
     }
 
 
@@ -73,8 +52,8 @@
             tswitch = 0;
             stim = 0;
             etim = 6;
-            mint = [0, 0, 0];
-            minb = [0, 0, 0];
+            mint = [0, 0, 50];
+            minb = [50, 0, 50];
             maxt = [82, 1, 187];
             maxb = [207, 84, 70];
         } else if (time < dayLength * 9 / 24 && time >= dayLength * 6 / 24 && tswitch != 1) {
@@ -84,13 +63,13 @@
             mint = [82, 1, 187];
             minb = [207, 84, 70];
             maxt = [49, 132, 255];
-            maxb = [175, 180, 235];
+            maxb = [200, 200, 235];
         } else if (time < dayLength * 12 / 24 && time >= dayLength * 9 / 24 && tswitch != 2) {
             tswitch = 2;
             stim = 9;
             etim = 12;
             mint = [49, 132, 255];
-            minb = [175, 180, 235];
+            minb = [200, 200, 235];
             maxt = [0, 113, 254];
             maxb = [240, 178, 133];
         } else if (time < dayLength * 18 / 24 && time >= dayLength * 12 / 24 && tswitch != 3) {
@@ -107,16 +86,16 @@
             etim = 21;
             mint = [0, 0, 170];
             minb = [238, 10, 20];
-            maxt = [0, 0, 0];
-            maxb = [0, 0, 0];
+            maxt = [0, 0, 120];
+            maxb = [80, 0, 50];
         } else if (time <= dayLength * 24 / 24 && time >= dayLength * 21 / 24 && tswitch != 5) {
             tswitch = 5;
             stim = 21;
             etim = 24;
-            mint = [0, 0, 0];
-            minb = [0, 0, 0];
-            maxt = [0, 0, 0];
-            maxb = [0, 0, 0];
+            mint = [0, 0, 120];
+            minb = [80, 0, 50];
+            maxt = [0, 0, 50];
+            maxb = [50, 0, 50];
         } else {
             //random shit -> this case will never happen
         }
@@ -151,50 +130,42 @@
 
 
     function updateCanvas() {
-        var grd = ctx.createLinearGradient(0, 0, 0, 5);
+        var grd = ctx.createLinearGradient(0, 0, 0, 100);
+        var curr_x = getScLPos();
         grd.addColorStop(0, colt);
         grd.addColorStop(1, colb);
         ctx.fillStyle = grd;
         
-        ctx.fillRect(0, 0, 1, height/120);
+        ctx.fillRect(0, 0, width, height);
+
     }
-
-
-
 
 
 };
 
 
 //parallax scrolling
+var sky1 = document.getElementById("skyline1");
+var sky2 = document.getElementById("skyline2");
+var sky3 = document.getElementById("skyline3");
+var sky4 = document.getElementById("skyline4");
 
+function prllx2() {
+    var curr_x = getScLPos();
 
-function currentXPosition() {
-    if (self.pageXOffset) return self.pageXOffset;
-
-    if (document.documentElement && document.documentElement.scrollLeft)
-        return document.documentElement.scrollLeft;
-
-    if (document.body.scrollLeft) return document.body.scrollLeft;
-    return 0;
-}
-
-
-
-var scroll_correct = false;
-function prllx() {
-    var curr_x = currentXPosition();
-    var speed = 0.5;
-    var p1_img = document.getElementById("p1_bg_img");
-    p1_img.style.left = curr_x * speed + 50 + "px";
+    sky1.style.left = curr_x * 0.2 + "px";
+    sky2.style.left = curr_x * 0.5 + "px";
+    sky3.style.left = curr_x * 0.8 + "px";
+    sky4.style.left = curr_x * 0.9 + "px";
     scroll_correct = false;
 };
-function scrollex() {
+
+var scroll_correct = false;
+function scrollex2() {
     if (scroll_correct == false) {
         scroll_correct = true;
-        requestAnimationFrame(prllx);
+        requestAnimationFrame(prllx2);
     }
 }
-window.onscroll = function (event) {
-    scrollex();
-};
+window.onscroll = scrollex2;
+

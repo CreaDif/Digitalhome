@@ -1,36 +1,28 @@
 ﻿window.onload = function () {
-
-    var tog_menu = 1;
     tog_m();
-    var tog_search = 0;
-    var width = document.documentElement.clientWidth + 1;
-    var height = document.documentElement.clientHeight + 1;
-    var mb = document.getElementById("m_button");
-    mb.addEventListener("click", tog_m);
-
-    function tog_m() {
-        if (tog_menu == 0) {
-            document.getElementById("navi").className = "active";
-            document.getElementById("mb1").className = "mact";
-            document.getElementById("mb2").className = "mact";
-            document.getElementById("mb3").className = "mact";
-            tog_menu = 1;
-        } else {
-            document.getElementById("navi").className = "idle";
-            document.getElementById("mb1").className = "mnorm";
-            document.getElementById("mb2").className = "mnorm";
-            document.getElementById("mb3").className = "mnorm";
-            tog_menu = 0;
-        }
-    }
-
-
-
-
-
-
-
 };
+
+var tog_menu = 1;
+var width = document.documentElement.clientWidth + 1;
+var height = document.documentElement.clientHeight + 1;
+var mb = document.getElementById("m_button");
+mb.addEventListener("click", tog_m);
+
+function tog_m() {
+    if (tog_menu == 0) {
+        document.getElementById("navi").className = "active";
+        document.getElementById("mb1").className = "mact";
+        document.getElementById("mb2").className = "mact";
+        document.getElementById("mb3").className = "mact";
+        tog_menu = 1;
+    } else {
+        document.getElementById("navi").className = "idle";
+        document.getElementById("mb1").className = "mnorm";
+        document.getElementById("mb2").className = "mnorm";
+        document.getElementById("mb3").className = "mnorm";
+        tog_menu = 0;
+    }
+}
 
 
 //parallax scrolling
@@ -55,10 +47,13 @@ function setScLPos(pos) {
 
 
 
+
+var p1_img = document.getElementById("p1_bg_img");
+
 function prllx() {
     var curr_x = getScLPos();
     var speed = 0.5;
-    var p1_img = document.getElementById("p1_bg_img");
+    
     p1_img.style.left = curr_x * speed + 50 + "px";
     scroll_correct = false;
 };
@@ -92,12 +87,12 @@ function mousewheel(e) {
         //IE
         cancelAnim();
         var delta = e.wheelDelta / 40;
-        requestAnimationFrame(setScLPos(getScLPos() - delta * 20));
+        setScLPos(getScLPos() - delta * 20);
     } else {
         //Others
         cancelAnim();
         var delta = -e.detail;
-        requestAnimationFrame(setScLPos(getScLPos() - delta * 20));
+        setScLPos(getScLPos() - delta * 20);
     }
 }
 
