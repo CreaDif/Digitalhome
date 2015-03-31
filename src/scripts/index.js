@@ -43,13 +43,22 @@ function setScLPos(pos) {
 }
 
 var p1_img = document.getElementById("p1_bg_img");
-
+var pImg = document.getElementsByClassName("s_img_fullscreen");
+var posImg = new Array(pImg.length);
+for (var i = 0; i < pImg.length; i++) {
+    posImg[i] = (pImg[i].getBoundingClientRect().left + getScLPos() + document.documentElement.clientWidth * 0.2);
+}
 function prllx() {
     var curr_x = getScLPos();
     var speed = 0.5;
     
     p1_img.style.left = curr_x * speed + 50 + "px";
     scroll_correct = false;
+    
+    //in addition: parallax effect for every image with class s_img_fullscreen
+    for (var i = 0; i < pImg.length; i++) {
+        pImg[i].style.left = (curr_x - posImg[i]) * 0.5 + "px";
+    }
 };
 
 var scroll_correct = false;

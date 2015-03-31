@@ -1,4 +1,4 @@
 //- mixin sectionImage for displaying a huge image instead of a content section
 mixin sectionImage(imageID)
 	div(id!=attributes.id)
-		div(id!=imageID)
+		div(id!=imageID, class=attributes.class)

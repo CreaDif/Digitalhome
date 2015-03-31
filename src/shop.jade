@@ -1,0 +1,42 @@
+//- index.jade
+extends templates/default
+
+//- needed for Content Sections
+include mixins/mixinContentSection
+
+//- needed for Image Sections
+include mixins/mixinImageSection
+
+//- needed for tiles
+include mixins/mixinTile
+
+prepend styles
+    link(rel="stylesheet", href="./css/index.css")
+
+block content
+    +sectionImage("p1_bg_img")(id="p1_bg", class="p1_shop")
+    +sectionContentDouble("Unsere Produkte", "Ihr Vergnügen")#s1
+
+        +tile("dhs1.html", "images/razor-christine/04.jpg")(class="tile dhdw")
+            | Server DHS1
+
+        +tile("dhp1.html", "images/hom3.jpg")(class="tile")
+            | Panel DHP1
+        +tile("dhs2.html", "images/server04.jpg")(class="tile")
+            | Server DHS2
+        +tile("dhp2.html", "images/hom1.jpg")(class="tile nhdw")
+            | Panel DHP2 Wide
+
+        +tile("dhsx80.html", "images/server05.jpg")(class="tile dhdw")
+            | Server DHSX80
+
+        +tile("dhsd20.html", "images/server03.jpg")(class="tile nhdw")
+            | Server DHSD20
+        +tile("dhs1.html", "images/razor-christine/06.jpg")(class="tile nhdw")
+            | Server DHS1
+
+
+
+
+block scripts
+    script(src="./scripts/index.js")

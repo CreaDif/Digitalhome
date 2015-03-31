@@ -46,11 +46,12 @@
             */
         .tile img {
             display: table-cell;
-            height: 60vh;
+            height: 36vh;
             position: relative;
             top: 0vh;
-            left: -20vh;
+            left: 0vh;
             vertical-align: middle;
+	    text-align: center;
             opacity: 0.3;
         }
         /*
@@ -70,7 +71,7 @@
             font-weight: 200;
         }
 
-        .tile:hover img {
+        .tile a:hover img {
             opacity: 0;
         }
 
@@ -96,8 +97,8 @@
         }
 
         .tile.nhdw img {
-            width: 102vh;
-            height: auto;
+            width: 72vh;
+            height: 36vh;
         }
 
         .tile.dhdw .t_txt {

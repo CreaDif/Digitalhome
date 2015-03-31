@@ -5,7 +5,7 @@
 
 mixin tableCell(title)
 	.cont_table_col
-      .cont_table_cell
-			p title
-      .cont_table_cell
-         block
+		.cont_table_cell
+			p!= title
+		.cont_table_cell
+			block

@@ -3,8 +3,11 @@ mixin tile(href, img)
 	div(class!=attributes.class)
 		a(href!=href)
 			img(src!=img)
-		.t_txt
-			if block
-				block
-			else
-				p No content
+			.t_txt
+				if block
+					block
+				else
+					p No content
+mixin tileNL(img)
+	div(class!=attributes.class)
+		img(src!=img)

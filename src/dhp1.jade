@@ -1,0 +1,40 @@
+﻿//- index.jade
+extends templates/default
+
+//- needed for Content Sections
+include mixins/mixinContentSection
+
+include mixins/mixinTable
+
+//- needed for Image Sections
+include mixins/mixinImageSection
+
+//- needed for tiles
+include mixins/mixinTile
+
+prepend styles
+    link(rel="stylesheet", href="./css/index.css")
+
+block content
+    +sectionImage("p1_bg_img")(id="p1_bg", class="p1_dhp1")
+    +sectionContent("DHP1", "Das Panel für alle Fälle")#s1
+        p
+            Dieses Panel passt perfekt zum Digital Home Server DHS1.
+
+    +sectionTable("Übersicht", "Technisch")
+        +tableCell("Reaktionszeit")
+            p 1ms
+        +tableCell("Auflösung")
+            p 7.680 x 4.320 Pixel (8k)
+        +tableCell("Interfaces")
+            p LAN, DVI-D, HDMI
+        +tableCell("Zubehör")
+            p 120Wh Akku
+    +sectionContentDouble("Eindrücke", "Optisch")#s1
+
+        +tileNL("images/hom2.jpg")(class="tile dhdw")
+
+
+
+block scripts
+    script(src="./scripts/index.js")

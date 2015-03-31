@@ -14,23 +14,22 @@ prepend styles
     link(rel="stylesheet", href="./css/index.css")
 
 block content
-    +sectionImage("p1_bg_img")#p1_bg
-    +sectionContent("4294967296 Farben", "auf einem Bildschirm")#s1
+    +sectionImage("p1_bg_img")(id="p1_bg", class="p1_home")
+    +sectionContent("Zeitlos Zukunft", "von jedem Punkt in ihrem Haus")#s1
         p
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+            Das einzigartige Digital Home Prinzip vereint Accessibility mit Usability. Ab jetzt schleppen Sie nicht mehr Ihren Laptop durch Ihr Haus und müssen sich auch nicht mehr zum Arbeiten in Ihr kaltes Schalfzimmer setzen. Ab jetzt sitzt Ihr Computer im kalten Schlafzimmer. Und Sie kriegen alles direkt auf Ihren Bildschirm im Wohnzimmer, Keller, Garten oder Dachboden.
+    +sectionContentImage("images/trust2.jpg")
+    +sectionContent("Die US Army", "vertraut auf unsere technische Überlegenheit")
+        p
+            "Weil Digital Home das einzige Unternehmen weltweit ist, das zentral verwaltete, transparente und gebogene 16k 3D HUDs bauen kann."
+    +sectionContentImage("images/trust1.jpg")
+    +sectionContent("Die mächtigsten Männer der Welt", "hängen von unseren Produkten ab")
+        p
+            "Digital Home hat uns geholfen, unsere Arbeit zentral zu koordinieren und vor Angriffen aus dem Netz zu schützen. Das beste daran: Wir sparen noch Geld"
 
-    +sectionContentDouble("Unsere Produkte", "unsere Produkte")#s4
-        +tile("details.html", "images/blurred/photography1.png")(class="tile dhdw")
-            | TV Panels
-        +tile("details.html", "images/blurred/photography1.png")(class="tile")
-            | TV Panels
-        +tile("details.html", "images/blurred/photography1.png")(class="tile")
-            | TV Panels
-        +tile("details.html", "images/blurred/photography1.png")(class="tile nhdw")
-            | TV Panels
-        +tile("details.html", "images/blurred/photography1.png")(class="tile dhdw")
-            | TV Panels
-        +tile("details.html", "images/blurred/photography1.png")(class="tile")
-            | TV Panels
-        +tile("details.html", "images/blurred/photography1.png")(class="tile")
-            | TV Panels
+
+
+
+
+block scripts
+    script(src="./scripts/index.js")

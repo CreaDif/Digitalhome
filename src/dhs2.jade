@@ -1,0 +1,58 @@
+﻿//- index.jade
+extends templates/default
+
+//- needed for Content Sections
+include mixins/mixinContentSection
+
+include mixins/mixinTable
+
+//- needed for Image Sections
+include mixins/mixinImageSection
+
+//- needed for tiles
+include mixins/mixinTile
+
+prepend styles
+    link(rel="stylesheet", href="./css/index.css")
+
+block content
+    +sectionImage("p1_bg_img")(id="p1_bg", class="p1_dhs2")
+    +sectionContent("DHS2", "Modularer Server für jeden Verwendungszweck")#s1
+        p
+            Der  Digital Home Server DHS2 steht Ihnen zur Seite, wenn es um mehr als nur um Alltagsaufgaben geht. Dabei wird viel Wert auf Multitasking sowohl auf CPU wie auch auf GPU Seite gelegt. Zusammen mit Razer haben wir mit dem DHS2 den besten grafikfähigen Modulserver seiner Kategorie geschaffen. Reichen Ihnen die 6 CPUs nicht aus? Dann schauen Sie doch einfach in Kürze mal wieder im Shop vorbei, wenn die neuen Digital Home Steckkarten im Angebot sind.
+
+    +sectionTable("Ubersicht", "Technisch")
+        +tableCell("CPU")
+            p Intel Xeon 8x3.9Ghz
+        +tableCell("RAM")
+            p 64GB DDR5 1600Mhz
+        +tableCell("Grafik")
+            p NVidia Geforce GTX 1020Ti
+        +tableCell("Speicher")
+            p 3x 1008GB Seagate SSHDD
+        +tableCell("PCIe")
+            p 2x Digital Home 10G/1G LAN
+        +tableCell("Interfaces")
+            p 2x LAN, 1x HDMI, 4x DVI-D, 2x Line-out, 12x USBremote3.0
+        +tableCell("Zubehör")
+            p 1000W Netzteil, 2x 30Meter USBremote3.0 Kabel
+    +sectionContentDouble("Eindrücke", "Optisch")#s1
+
+        +tileNL("images/razor-christine/04.jpg")(class="tile dhdw")
+
+        +tileNL("images/razor-christine/05.jpg")(class="tile dhdw")
+
+
+        +tileNL("images/razor-christine/01.jpg")(class="tile")
+
+        +tileNL("images/razor-christine/03.jpg")(class="tile")
+
+        +tileNL("images/razor-christine/06.jpg")(class="tile nhdw")
+
+
+        +tileNL("images/razor-christine/02.jpg")(class="tile dhdw")
+
+
+
+block scripts
+    script(src="./scripts/index.js")

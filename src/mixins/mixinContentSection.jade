@@ -25,3 +25,7 @@ mixin sectionTable(headline, sub)
 		.cont_t
 			div(class="cont_table grid50")
 				block
+
+mixin sectionContentImage(iSource)
+	section(id!=attributes.id, class="i_full_section")
+		img(src=iSource, class="s_img_fullscreen")

@@ -11,6 +11,12 @@ section {
 	&.s_double_w:after {
         width: 100%;
     }
+    &.i_full_section {
+	width: 60vw;
+	background-color: transparent;
+	overflow: hidden;
+	transform: skew(-15deg, 0deg);
+    }
 }
 
 /*
@@ -36,8 +42,8 @@ section {
 .cont_block p {
     	display: block;
         margin: 6px;
-        font-size: 1.2rem;
-        line-height: 1.8rem;
+        font-size: 1.5rem;
+        line-height: 2.2rem;
         max-width: 30em;
         margin-left: auto;
         margin-right: auto;
@@ -209,3 +215,12 @@ a.a_table, .cont_block a {
             -webkit-transition-delay: 0.1s;
             transition-delay: 0.1s;
         }
+
+.s_img_fullscreen {
+	position: absolute;
+	top: 0%;
+	left: -20vw;
+	width: 100vw;
+	z-index: 0;
+	transform: skew(15deg, 0deg);
+}
