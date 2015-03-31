@@ -8,14 +8,17 @@ prepend styles
     link(rel="stylesheet", href="./css/err.css")
 
 block content
-    +sectionContent("Wir bauen", "für Sie")#err_block
-    div(id="err_bg")
-            canvas(id="sunset")
-                #p1_bg_img
-            #skyline1
-            #skyline2
-            #skyline3
-            #skyline4
-
+    #err_bg
+        canvas(id="sunset")
+            #p1_bg_img
+        #skyline1
+        #skyline2
+        #skyline3
+        #skyline4
+        .cont_block#err_block
+            .h_block
+                h1 Wir bauen
+            h2 für Sie
+            
 block footer
     <!-- No footer -->
