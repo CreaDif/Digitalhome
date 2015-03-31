@@ -1,0 +1,54 @@
+﻿//- index.jade
+extends templates/default
+
+//- needed for Content Sections
+include mixins/mixinContentSection
+
+include mixins/mixinTable
+
+//- needed for Image Sections
+include mixins/mixinImageSection
+
+//- needed for tiles
+include mixins/mixinTile
+
+prepend styles
+    link(rel="stylesheet", href="./css/index.css")
+
+block content
+    +sectionImage("p1_bg_img")(id="p1_bg", class="p1_dhsd20")
+    +sectionContent("DHSD20", "C-Klasse Modulserver")#s1
+        p
+            Der DHSD20 basiert auf dem DHS2 und ist perfekt für Echtzeitrendering geeignet und kann Kreativen helfen, unabhängig von Ort und Zeit an ihren Projekten weiterzuarbeiten.
+
+    +sectionTable("Übersicht", "Technisch")
+        +tableCell("CPU")
+            p Intel Core i7 6x3.9Ghz
+        +tableCell("RAM")
+            p 128GB DDR5 1600Mhz
+        +tableCell("Grafik")
+            p NVidia Geforce GTX 1020Ti
+        +tableCell("Speicher")
+            p 3x 1008GB Seagate SSHDD
+        +tableCell("PCIe")
+            p 2x Digital Home 10G/1G LAN
+        +tableCell("Interfaces")
+            p 2x LAN, 1x HDMI, 4x DVI-D, 2x Line-out, 12x USBremote3.0
+        +tableCell("Zubehör")
+            p 1000W Netzteil, 2x 30Meter USBremote3.0 Kabel
+    +sectionContentDouble("Eindrücke", "Optisch")#s1
+
+        +tileNL("images/server09.jpg")(class="tile dhdw")
+
+
+        +tileNL("images/razor-christine/01.jpg")(class="tile")
+
+        +tileNL("images/razor-christine/03.jpg")(class="tile")
+
+        +tileNL("images/server03.jpg")(class="tile nhdw")
+
+
+
+
+block scripts
+    script(src="./scripts/index.js")
