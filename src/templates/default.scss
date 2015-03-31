@@ -17,7 +17,7 @@
   border: 0px;
 }
 
-a, a:hover, a:before, a:hover:before, a:after, a:hover:after, #navi, .igc img, .igd, .igd:before {
+a, a:hover, a:before, a:hover:before, a:after, a:hover:after, #navi, .tile img, .t_txt, .t_txt:before {
         -webkit-transition: all 0.25s ease;
     -moz-transition: all 0.25s ease;
     -o-transition: all 0.25s ease;
@@ -135,27 +135,6 @@ section, footer {
     }
 }
 
-canvas {
-    position: fixed;
-    top: 0%;
-    left: 0%;
-    z-index: 0;
-    image-rendering: optimizeSpeed;             
-    image-rendering: -moz-crisp-edges;          
-    image-rendering: -webkit-optimize-contrast; 
-    image-rendering: -o-crisp-edges;                            
-    -ms-interpolation-mode: nearest-neighbor;   
-}
-
-/*
-    Occurs with canvas' skyline image. Don't delete.
-    */
-#sil {
-    position: fixed;
-    bottom: -10%;
-    left: 0%;
-    width: 100%;
-}
 
 // PRINT
 

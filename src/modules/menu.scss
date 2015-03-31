@@ -348,7 +348,7 @@ nav {
         position: absolute;
         left: 0px;
         top: 0px;
-        transform: rotate(0deg) translate(10px, 10px);
+        transform: rotate(0deg) translate3d(10px, 10px, 0px);
 
         &:after {
             content: '';
@@ -371,8 +371,7 @@ nav {
         top: 0px;
         left: 0px;
         z-index: 1;
-        transform: rotate(0deg) translate(30px, 30px);
-
+        transform: rotate(0deg) translate3d(30px, 30px, 0px);
         &:after {
             content: '';
             position: absolute;
@@ -381,7 +380,7 @@ nav {
             height: 4px;
             width: 15px;
             z-index: 1;
-            transform: rotate(45deg) translate(0px, -3px);
+            transform: rotate(45deg) translate3d(0px, -3px, 0px);
             background-color: #06f;
         }
     }
@@ -401,13 +400,12 @@ nav {
 
 #sb3 {
     @media screen {
-        transform: rotate(45deg) translate(-50px, 0px);
-    }
+        transform: rotate(45deg) translate3d(-50px, 0px, 0px);
 }
 
 #sb4 {
     @media screen {
-        transform: rotate(-45deg) translate(-50px, 0px);
+        transform: rotate(-45deg) translate3d(-50px, 0px, 0px);
     }
 }
 /*______________________________________________________________________________*/
@@ -428,12 +426,12 @@ nav {
                 height: 125px;
                 border-color: #ccc;
                 border-radius: 100px;
-                transform: rotate(45deg) translate(-60px, 0px);
+                transform: rotate(45deg) translate3d(-60px, 0px, 0px);
                 border-color: #06f;
             }
 
             #sb2 {
-                transform: rotate(0deg) translate(10px, 22px);
+                transform: rotate(0deg) translate3d(10px, 22px, 0px);
             }
 
             #sb2:after {
@@ -441,11 +439,11 @@ nav {
             }
 
             #sb3 {
-                transform: rotate(45deg) translate(1.75px, -0.25px);
+                transform: rotate(45deg) translate3d(1.75px, -0.25px, 0px);
             }
 
             #sb4 {
-                transform: rotate(-45deg) translate(2.25px, -0.25px);
+                transform: rotate(-45deg) translate3d(2.25px, -0.25px, 0px);
             }
         }
     }

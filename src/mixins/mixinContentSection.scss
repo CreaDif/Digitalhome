@@ -22,7 +22,7 @@ section {
     overflow: hidden;
 }
 
-.cont_block, .cont_p {
+.cont_block, .cont_p, .cont_t {
 	position: relative;
     z-index: 2;
     
@@ -31,8 +31,9 @@ section {
     max-height: 80vh;
     font-weight: 300;
     vertical-align: middle;
+}
 
-    p {
+.cont_block p {
     	display: block;
         margin: 6px;
         font-size: 1.2rem;
@@ -109,7 +110,10 @@ section {
 	        }
         }
     }
-}
+
+
+
+
 /*
     Content block with extended width.
     */
@@ -144,14 +148,15 @@ section {
     }
 }
 
-.cont_p a, .cont_block a {
-    color: #000;
-    &:after {
-        border-color: #000;
-    }
+.cont_t {
+    width: 296vh;
+    padding: 0px;
+    font-size: 0rem;
+    z-index: 2;
+    position: relative;
 }
 
-.cont_p a.a_color, .cont_block a {
+a.a_table, .cont_block a {
     display: inline-block;
     width: 100%;
     height: 100%;
@@ -177,3 +182,30 @@ section {
     	@include linkArrow();
     }
 }
+
+.tile .t_txt:before {
+            display: inline-block;
+            position: relative;
+            top: -1px;
+            margin-right: 5px;
+            margin-left: 5px;
+            width: 10px;
+            height: 10px;
+            content: '';
+            -webkit-transition-delay: 0.1s;
+            transition-delay: 0.1s;
+            -moz-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+            border: 2px solid rgba(0,0,0,0);
+            border-bottom: none;
+            border-left: none;
+        }
+
+.tile:hover .t_txt:before {
+            margin-right: 10px;
+            -webkit-transition-delay: 0.1s;
+            transition-delay: 0.1s;
+        }
