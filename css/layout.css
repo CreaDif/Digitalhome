@@ -65,7 +65,7 @@ canvas {
     left: 0%;
     width: 100%;
     height: 100vh;
-    z-index: 5;
+    z-index: 4;
     background-image: url("../bilder/sky1.png");
     background-repeat: repeat-x;
     background-attachment: scroll;
@@ -79,17 +79,17 @@ canvas {
 }
 
 #skyline2 {
-    z-index: 4;
+    z-index: 3;
     background-image: url("../bilder/sky2.png");
     background-size: auto 250px;
 }
 #skyline3 {
-    z-index: 3;
+    z-index: 2;
     background-image: url("../bilder/sky3.png");
     background-size: auto 300px;
 }
 #skyline4 {
-    z-index: 2;
+    z-index: 1;
     background-image: url("../bilder/sky4.png");
     opacity: 0.6;
     background-size: auto 600px;
