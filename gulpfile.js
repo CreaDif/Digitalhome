@@ -86,7 +86,7 @@ gulp.task('build', ['sass', 'jade', 'imagemin', 'scripts'], function() {});
 gulp.task('productive', ['build', 'minify-css', 'minify-html'], function() {});
 
 // Watch task for automated building
-gulp.task('watch', 'build', function() {
+gulp.task('watch', ['build'], function() {
 	// watch for jade changes
 	gulp.watch(['./src/*.jade', './src/**/*.jade'], function() {
 		gulp.run('jade');
