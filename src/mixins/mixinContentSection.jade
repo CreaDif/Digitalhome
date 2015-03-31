@@ -7,10 +7,7 @@ mixin sectionContentDouble(headline, sub)
 			h2= sub
 		//- Should be cont_block, research on this
 		.cont_p
-			if block
-				block
-			else
-				p No content provided
+			block
 mixin sectionContent(headline, sub)
 	section(id!=attributes.id)
 		.cont_block
@@ -18,7 +15,4 @@ mixin sectionContent(headline, sub)
 				h1= headline
 			h2= sub
 		.cont_block
-			if block
-				block
-			else
-				p No content provided
+			block

@@ -18,9 +18,11 @@ html(lang="de")
         block title
             title DigitalHome - Ihr Haus in Ihrer Hand
     body
-        include ../modules/menu
+        block menu
+            include ../modules/menu
         .table
             block content
-            include ../modules/footer
+            block footer
+                include ../modules/footer
         block scripts
             script(src="./scripts/scripts.js")
