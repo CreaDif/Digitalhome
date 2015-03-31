@@ -1,10 +1,11 @@
 //- mixin tiles for presenting tiles on a page
-mixin tile(href, img)
-	div(class!=attributes.class)
-		a(href!=href)
-			img(src!=img)
-		.igd
-			if block
-				block
-			else
-				p No content
+//- How to use:
+//- +tableCell("some-title")
+//- 	a.a_table(href="some-link") some-text
+
+mixin tableCell(title)
+	.cont_table_col
+      .cont_table_cell
+      	p title
+      .cont_table_cell
+         block

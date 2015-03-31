@@ -16,3 +16,13 @@ mixin sectionContent(headline, sub)
 			h2= sub
 		.cont_block
 			block
+mixin sectionTable(headline, sub)
+	section(id!=attributes.id, class="s_double_w")
+		.cont_block
+			.h_block
+				h1= headline
+			h2= sub
+		.cont_t
+      	div(class="cont_table grid50")
+      		block
+                    
