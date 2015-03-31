@@ -1,0 +1,109 @@
+@import 'interchange';
+
+.cont_table {
+        display: table;
+        table-layout: fixed;
+        border-collapse: collapse;
+        text-align: center;
+        color: #111;
+    }
+    section:nth-of-type(2n-1) .cont_table {
+        color: #eee;
+    }
+
+        /*
+    General Styles for a.a_table are set in layout.css
+    */
+    a.a_table {
+        display: block;
+        color: #111;
+        padding: 0px;
+        margin: 0px;
+    }
+        a.a_table:hover:before {
+            border-color: #111;
+        }
+
+@media screen and (orientation: landscape) {
+    .cont_table {
+        height: 72vh;
+        width: 294vh;
+        margin: 1vh;
+    }
+    .cont_table_col {
+        display: table-cell;
+        height: 100%;
+        table-layout: fixed;
+    }
+    /*
+    force grid with 50% cell-height for grid50 tables
+    */
+    
+    .cont_table_cell {
+        display: block;
+        width: 100%;
+        border: 2vh solid #ccc;
+        border-left: none;
+        border-bottom: none;
+        padding: 2rem;
+        padding-top: calc(17.5vh - 0.9rem);
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+        background-color: #aaa;
+    }
+    .grid50 .cont_table_cell {
+        height: 36vh;
+    }
+    .cont_table_cell:nth-of-type(2n-1) {
+        border-top: none;
+        vertical-align: bottom;
+    }
+    .cont_table_col:last-of-type .cont_table_cell {
+        border-right: none;
+    }
+    a.a_table {
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+        padding: 0px;
+        height: auto;
+        vertical-align: middle;
+    }
+}
+
+
+
+
+@media screen and (orientation: portrait) {
+    .cont_table {
+        width: 72vw;
+        margin: 1vh;
+    }
+    .cont_table_col {
+        display: table-row;
+        width: 72vw;
+    }
+    /*
+    force grid with 50% cell-height for grid50 tables
+    */
+    .cont_table_cell {
+        display: table-cell;
+        border: 2px solid #999;
+        border-right: none;
+        border-top: none;
+        padding: 2rem;
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+    }
+    .grid50 .cont_table_cell {
+        width: 50%;
+    }
+    .cont_table_col .cont_table_cell:first-of-type {
+        border-left: none;
+        vertical-align: top;
+    }
+    .cont_table_col:last-of-type .cont_table_cell {
+        border-bottom: none;
+    }
+
+
+}

@@ -1,0 +1,10 @@
+//- mixin tiles for presenting tiles on a page
+mixin tile(href, img)
+	div(class!=attributes.class)
+		a(href!=href)
+			img(src!=img)
+		.igd
+			if block
+				block
+			else
+				p No content
