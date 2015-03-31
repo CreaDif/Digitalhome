@@ -23,9 +23,7 @@ function tog_m() {
     }
 }
 
-
 //parallax scrolling
-
 
 function getScLPos() {
     if (self.pageXOffset) return self.pageXOffset;
@@ -43,9 +41,6 @@ function setScLPos(pos) {
     if (document.body.scrollLeft || document.body.scrollLeft == 0)
         document.body.scrollLeft = pos;
 }
-
-
-
 
 var p1_img = document.getElementById("p1_bg_img");
 
@@ -114,14 +109,12 @@ window.onkeydown = function (e) {
     }
 }
 
-
 //Animation CORE
 var startX = null;
 var startY = getScLPos();
 var dest = 0;
 var duration = 1000;
 var reqID = 0;
-
 
 document.getElementById("s_button").onclick = function () {
     //set Animation parameters

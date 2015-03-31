@@ -32,7 +32,11 @@
     ud_dim();
     window.onresize = ud_dim;
     function ud_dim() {
+<<<<<<< HEAD:src/scripts/err.js
         //update dimensions
+=======
+        //update screen dimensions
+>>>>>>> master:err.js
         width = document.documentElement.clientWidth;
         height = document.documentElement.clientHeight;
         s.setAttribute("style", "width:" + width + "px;height:" + height + "px");
