@@ -16,25 +16,26 @@ prepend styles
     link(rel="stylesheet", href="./css/index.css")
 
 block content
-    +sectionImage("p1_bg_img")(id="p1_bg", class="p1_dhp1")
-    +sectionContent("DHP1", "Das Panel für alle Fälle")#s1
+    +sectionImage("p1_bg_img")(id="p1_bg", class="p1_dhp2")
+    +sectionContent("DHP2", "Das Panel für alle Fälle")#s1
         p
-            Dieses Panel passt perfekt zum Digital Home Server DHS1.
+            Dieses Panel passt perfekt zum Digital Home Server DHS2.
 
     +sectionTable("Übersicht", "Technisch")
         +tableCell("Reaktionszeit")
-            p 1ms
+            p 2ms
         +tableCell("Auflösung")
             p 7.680 x 4.320 Pixel (8k)
         +tableCell("Interfaces")
             p LAN, DVI-D, HDMI
         +tableCell("Zubehör")
-            p 120Wh Akku
+            p 20W Netzteil
     +sectionContentDouble("Eindrücke", "Optisch")#s1
 
-        +tileNL("images/hom2.jpg")(class="tile dhdw")
+        +tileNL("images/hom1.jpg")(class="tile dhdw")
         +tileNL("images/hom4.jpg")(class="tile dhdw")
         +tileNL("images/hom5.jpg")(class="tile dhdw")
+
 
 
 block scripts

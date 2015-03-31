@@ -4,7 +4,7 @@
 *.css
 *.html
 css/
-images/
+/images/
 scripts/
 node_modules/
 

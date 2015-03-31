@@ -52,8 +52,11 @@
             left: 0vh;
             vertical-align: middle;
 	    text-align: center;
-            opacity: 0.3;
+            opacity: 1;
         }
+	.tile a img {
+		opacity: 0.3;
+	}
         /*
             The div where the text comes in.
             */
