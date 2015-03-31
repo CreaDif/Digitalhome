@@ -1,0 +1,59 @@
+canvas {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    z-index: 0;
+    image-rendering: optimizeSpeed;             
+    image-rendering: -moz-crisp-edges;         
+    image-rendering: -webkit-optimize-contrast; 
+    image-rendering: -o-crisp-edges;                           
+    -ms-interpolation-mode: nearest-neighbor;  
+}
+
+#err_bg {
+    width: 400vw;
+    height: 100vh;
+    display: table-cell;
+    position: relative;
+    overflow: hidden;
+}
+
+
+/*
+    Occurs with canvas' skyline image. Don't delete.
+    */
+#skyline1, #skyline2, #skyline3, #skyline4 {
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100vh;
+    z-index: 5;
+    background-image: url("../bilder/sky1.png");
+    background-repeat: repeat-x;
+    background-attachment: scroll;
+    background-position: bottom left;
+    background-size: auto 200px;
+    -webkit-transform: translate3d(0px, 0px, 0px);
+        -moz-transform: translate3d(0px, 0px, 0px);
+        -o-transform: translate3d(0px, 0px, 0px);
+        -ms-transform: translate3d(0px, 0px, 0px);
+        transform: translate3d(0px, 0px, 0px);
+}
+
+#skyline2 {
+    z-index: 4;
+    background-image: url("../bilder/sky2.png");
+    background-size: auto 250px;
+}
+#skyline3 {
+    z-index: 3;
+    background-image: url("../bilder/sky3.png");
+    background-size: auto 300px;
+}
+#skyline4 {
+    z-index: 2;
+    background-image: url("../bilder/sky4.png");
+    opacity: 0.6;
+    background-size: auto 600px;
+}

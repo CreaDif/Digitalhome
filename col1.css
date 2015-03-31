@@ -38,7 +38,7 @@
         background-color: #f60;
     }
 
-        #sb3, #sb4, #s_button:hover #sb2:after, #m_button:hover #mb1.mact:after, #m_button:hover #mb2.mact:after, #m_button:hover #mb3.mact:after, .cont_p a.a_color:hover, .cont_block a:hover, .igc.igl a:hover {
+        #sb3, #sb4, #s_button:hover #sb2:after, #m_button:hover #mb1.mact:after, #m_button:hover #mb2.mact:after, #m_button:hover #mb3.mact:after, .cont_p a.a_color:hover, .cont_block a:hover {
             background-color: #06f;
         }
     /*----------------------------------------------TXTCOL------------------------------------------------------*/
@@ -47,7 +47,7 @@
         color: #ccc;
     }
 
-        #navi > a:hover, section, footer, section:nth-of-type(2n-1), .cont_block a:hover, .igc.igl a:hover, .igc.igi:hover div.igd {
+        #navi > a:hover, section, footer, section:nth-of-type(2n-1), .cont_block a:hover, .tile:hover .t_txt {
             color: #eee;
         }
 
@@ -59,7 +59,7 @@
         color: #06f;
     }
 
-    h2, .igc.igi div.igd {
+    h2, .tile .t_txt {
         color: #f60;
     }
     /*----------------------------------------------Border - COL------------------------------------------------------*/
@@ -71,7 +71,7 @@
         border-color: #111;
     }
 
-        #navi > a:hover:before, .cont_block a:hover:before, .igc.igl a:hover:before, .igc.igi:hover div.igd:before {
+        #navi > a:hover:before, .cont_block a:hover:before, .tile:hover .t_txt:before {
             border-color: #eee;
         }
 
