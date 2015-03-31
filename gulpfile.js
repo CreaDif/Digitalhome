@@ -20,6 +20,7 @@ var minifyCSS = require('gulp-minify-css');
 // JS hint task
 gulp.task('jshint', function() {
   	gulp.src(['./src/scripts/*.js', '!**/jquery.js', '!**/jquery-easing.js'])
+    	.pipe(plumber())
     	.pipe(jshint())
     	.pipe(jshint.reporter('default'));
 });
@@ -30,6 +31,7 @@ gulp.task('imagemin', function() {
 	var imgDst = './images';
 
 	gulp.src(imgSrc)
+		.pipe(plumber())
 		.pipe(changed(imgDst))
 		.pipe(imagemin())
 		.pipe(gulp.dest(imgDst));
@@ -38,6 +40,7 @@ gulp.task('imagemin', function() {
 // Produce production scripts
 gulp.task('scripts', function() {
 	gulp.src(['./src/scripts/index.js', './src/scripts/err.js'])
+		.pipe(plumber())
 		.pipe(concat('scripts.js'))
 		.pipe(stripDebug())
 		.pipe(uglify())
@@ -68,6 +71,7 @@ gulp.task('jade', function() {
 // Minify HTML
 gulp.task('minify-html', function() {
 	gulp.src('./*.html')
+		.pipe(plumber())
 		.pipe(minifyHtml())
 		.pipe(gulp.dest('./'));
 });
@@ -75,6 +79,7 @@ gulp.task('minify-html', function() {
 // Minify css
 gulp.task('minify-css', function() {
 	gulp.src('./css/*.css')
+		.pipe(plumber())
 		.pipe(minifyCSS())
 		.pipe(gulp.dest('./css'));
 })

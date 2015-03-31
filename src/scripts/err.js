@@ -5,9 +5,7 @@
 
     var width = document.documentElement.clientWidth + 1;
     var height = document.documentElement.clientHeight + 1;
-
-
-
+    
     //canvas
     //written by Digital Home
 
@@ -32,19 +30,12 @@
     ud_dim();
     window.onresize = ud_dim;
     function ud_dim() {
-<<<<<<< HEAD:src/scripts/err.js
         //update dimensions
-=======
-        //update screen dimensions
->>>>>>> master:err.js
         width = document.documentElement.clientWidth;
         height = document.documentElement.clientHeight;
         s.setAttribute("style", "width:" + width + "px;height:" + height + "px");
         ctx = s.getContext("2d");
     }
-
-
-   
 
     function daytime() {
         dayLength = 240;
