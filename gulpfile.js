@@ -41,7 +41,7 @@ gulp.task('imagemin', function() {
 gulp.task('scripts', function() {
 	gulp.src(['./src/scripts/index.js', './src/scripts/err.js'])
 		.pipe(plumber())
-		.pipe(concat('scripts.js'))
+		//.pipe(concat('scripts.js'))
 		.pipe(stripDebug())
 		.pipe(uglify())
 		.pipe(gulp.dest('./scripts'));
